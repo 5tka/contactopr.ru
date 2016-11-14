@@ -1,0 +1,142 @@
+.header {
+    @extend .container;
+    .firstline {
+        background: #ffffff;
+        height: 40px;
+        box-sizing: border-box;
+        & > * {
+            vertical-align: middle;
+        }
+    }
+}
+
+/* Cтили лого */
+.logo {
+    display: inline-block;
+}
+
+/* Стили меню */
+.landing-menu {
+    display: inline-block;
+}
+.menu-list {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+  .menu-list__li {
+    display: inline-block;
+    margin-left: 30px;
+  }
+  .menu-list__a {
+    color: #000000;
+    font-size: 16px;
+    padding: 10px 0;
+  }
+}
+
+/* Стили Гамбургера */
+
+.hamburger .line{
+  width: 20px;
+  height: 3px;
+  background-color: #a9aaac;
+  display: block;
+  margin: 2px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger:hover{
+  cursor: pointer;
+}
+
+#hamburger{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#hamburger.is-active{
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#hamburger:before{
+  content: "";
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  border: 5px solid transparent;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+  border-radius: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#hamburger.is-active:before{
+  border: 3px solid #a9aaac;
+}
+
+#hamburger.is-active .line{
+  width: 20px;
+}
+
+#hamburger.is-active .line:nth-child(2){
+  opacity: 0;
+}
+
+#hamburger.is-active .line:nth-child(1){
+  -webkit-transform: translateY(16px);
+  -ms-transform: translateY(16px);
+  -o-transform: translateY(16px);
+  transform: translateY(16px);
+}
+
+#hamburger.is-active .line:nth-child(3){
+  -webkit-transform: translateY(6px) rotate(90deg);
+  -ms-transform: translateY(6px) rotate(90deg);
+  -o-transform: translateY(6px) rotate(90deg);
+  transform: translateY(6px) rotate(90deg);
+}
+
+
+
+
+/* Блок соц сетей */
+.socials_block {
+    display: inline-block;
+}
+.social__list {
+    display: inline-block;
+}
+.social__item {
+    display: inline-block;
+    margin-right: 14px;
+}
+.social__link {
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+.social__link_vk, .social__link_vk:hover {
+    background: url(../img/icons/vk-square.svg);
+}
+.social__link_fb, .social__link_fb:hover {
+    background: url(../img/icons/fb-square.svg);
+}
+.social__link_insta, .social__link_insta:hover {
+    background: url(../img/icons/insta-square.svg);
+}
