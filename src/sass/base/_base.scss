@@ -15,3 +15,10 @@ $jeet: (
   layout-direction: LTR,
   parent-first: false
 );*/
+
+
+.container {
+	width: 93.75%;
+	margin: 0 auto;
+	@include clearfix();
+}

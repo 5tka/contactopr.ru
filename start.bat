@@ -1,1 +1,1 @@
-npm i & bower i & gulp & subl . || code
+npm i & bower i & subl . || code & gulp
