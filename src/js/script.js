@@ -6,5 +6,8 @@ $(document).ready(function(){
 	  $('.header-slider .bxslider').bxSlider({
 pager: false
 		});
-
+	  $('.header-slider').css({
+        visibility: "visible",
+        opacity: "1"
+   	 })
 });

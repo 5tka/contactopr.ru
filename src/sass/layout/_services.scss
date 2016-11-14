@@ -1,0 +1,35 @@
+.services{
+    min-width: 990px;
+    background: #717171;
+    padding: {
+        top: 45px;
+        bottom: 66px;
+    }
+    &__gallery{
+        &-list{
+            list-style-type: none;
+            text-align: center;
+        }
+        &-item{
+            display: inline-block;
+            margin-right: 35px;
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+        &-link{
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: em(24px);
+            color: #b3b1ac;
+            @include transition(.3s);
+            outline: none;
+            &:hover{
+                color: #d4d4d4;
+            }
+            &--active{
+                color: #b8ce2b;
+            }
+        }
+    }
+}
