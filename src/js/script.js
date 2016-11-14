@@ -1,1 +1,5 @@
-console.log('hello from script.js');
+$(document).ready(function(){
+  $(".hamburger").click(function(){
+    $(this).toggleClass("is-active");
+  });
+});

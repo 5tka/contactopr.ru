@@ -1,23 +1,24 @@
 header.header
-    h1 
-        | header
-    ul.hvr-icon-forward
-        li
-            | bower
-        li
-            | bootstrap-grid-only 12(1170px)/24(1155px)
-        li
-            | 960 grid system 12/16
-        li
-            | bourbone
-        li
-            | jQ
-        li
-            | normalize.css 5.0 
-        li
-            | owl v2
-        li
-            | bPopup
-        li
-            | hover.css
+    .firstline
+        a.logo(href='#')
+            img.logo-img(src='img/logo.png')
+
+        .landing-menu
+            - var menu_items = ["НОВОСТИ","УСЛУГИ","О НАС","КЛИЕНТЫ","ПРОЕКТЫ","КОНТАКТЫ","ВАКАНСИИ","ОТПРАВИТЬ БРИФ"];
+            ul.menu-list
+                each val in menu_items
+                    li.menu-list__li
+                        a.menu-list__a(href='#') #{val}
+            #hamburger.hamburger
+                span.line
+                span.line
+                span.line
+            .socials_block
+                ul.social__list
+                    li.social__item
+                        a.social__link.social__link_fb(href='#')
+                    li.social__item
+                        a.social__link.social__link_vk(href='#')
+                    li.social__item
+                        a.social__link.social__link_insta(href='#')
 
