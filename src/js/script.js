@@ -118,3 +118,9 @@ $('.fancybox').fancybox({'width':1100, afterClose: function() {animation=false;}
 		return this.each(createTabs);
 	};
 })(jQuery);
+// POPUP
+$('.uslugi__item').on('click', function(event) {
+  event.preventDefault();
+  $('.uslugi-popup__wrap').bPopup({
+  });
+});
