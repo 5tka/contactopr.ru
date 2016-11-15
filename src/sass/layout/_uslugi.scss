@@ -4,7 +4,6 @@
 .uslugi__wrap{
 	max-width: 1000px;
 	margin: 0 auto;
-    // display: inline-block;
     text-align: justify;
 	text-align-last: justify
   //   &:after{
@@ -14,14 +13,14 @@
   //   }
 }
 .uslugi__item{
+	@include clearfix();
     display: inline-block;
     vertical-align: top;
     position: relative;
-    width: 25%;
+    width: 24%;
     height: 60px;
     line-height: 60px;
     margin-bottom: 63px;
-    @include clearfix();
     &:hover{
     	cursor: pointer;
     }
@@ -31,7 +30,8 @@
 }
 .uslugi{
 	&__icon{
-		float: left;
+		margin-left: 	45px;
+		float:left;
 		@include border-radius(50%);
 		background: #c1bfbc;
 		width: 60px;
@@ -65,7 +65,7 @@
 	}
 	&__text{
 		float:left;
-		text-align:left;
+		vertical-align: top;
 		margin-left: 25px;
 		color: #d5d5d5;
 	}

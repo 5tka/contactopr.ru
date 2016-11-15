@@ -22,6 +22,7 @@ gulp.task('pug-includes', function() {
   return gulp.src(['./src/pug/*.pug','!./src/pug/_*.pug'])
     .pipe(plumber())
     .pipe(pug({
+       pretty: true
     }))
     .on('error', console.log)
     .pipe(gulp.dest('./build/'))

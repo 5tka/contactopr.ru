@@ -6,6 +6,7 @@
 	background: linear-gradient(to bottom,  #568900 0%,#84bb14 50%,#568900 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#568900', endColorstr='#568900',GradientType=0 ); /* IE6-9 */
 	padding: 135px 0 220px 0;
+	color: #fff;
 }
 .about__title{
 	@include font-size(60px);
@@ -14,19 +15,22 @@
 	text-transform: uppercase;
 }
 .about__details{
-	@include font-size(30px);
+	max-width: 	1370px;
+	@include font-size(28px);
+	margin: 0 auto;
 	margin-bottom: 135px;
 }
 .about-faces{
 	&__wrap{
-
+		max-width: 	1344px;
+		margin:0 auto;
 	}
 	&__list{
 		position: relative;
-		height: 150.75px;
+		height: 200px;
 	}
 	&__item{
-		width: 12%;
+		width: 200px;
 		height: 100%;
 		border-radius: 50%;
 		background: green;
@@ -34,50 +38,146 @@
 		background-size: contain;
 		background-position: center center;
 		cursor: pointer;
-		overflow: hidden;
+		// overflow: hidden;
+			&:after{
+				content: "";
+				position: absolute;
+				top:0;
+				width: 200px;
+				height: 200px;
+				// z-index: 1;
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center center;
+			}
+			&:hover:after{
+				display: none;
+			}
 		& img{
 			width: 100%;
 			height: 100%;
+			border-radius: 50%;
 			-webkit-filter: grayscale(100%);
 			&:hover{
 				-webkit-filter: grayscale(0);  
+				z-index: 100;
 			}  
 		}
 		&_c{
 			left:8%;
 			z-index:10;
-			//  -webkit-filter: grayscale(100%);  
+			&:hover{
+				z-index: 100;
+			}
+			&:hover .about-faces__detail_c{
+				visibility: visible;
+			}
+			&:after{
+				background-image: url(../img/about/c1l.png);
+			}
 		}
 		&_o{
 			left:18%;
 			z-index:11;
+			&:hover{
+				z-index: 100;
+			}
+			&:hover .about-faces__detail_o{
+				visibility: visible;
+			}
+			&:after{
+				background-image: url(../img/about/c2l.png);
+			}
 		}
 		&_n{
 			left:28%;
 			z-index:12;
+			&:hover{
+				z-index: 100;
+			}
+			&:hover .about-faces__detail_n{
+				visibility: visible;
+			}
+			&:after{
+				background-image: url(../img/about/c3l.png);
+			}
 		}
 		&_t{
 			left:38%;
 			z-index:13;
+			&:hover{
+				z-index: 100;
+			}
+			&:hover .about-faces__detail_t{
+				visibility: visible;
+			}
+			&:after{
+				background-image: url(../img/about/c4l.png);
+			}
 		}
 		&_a{
 			left:48%;
 			z-index:14;
+			&:hover{
+				z-index: 100;
+			}
+			&:hover .about-faces__detail_a{
+				visibility: visible;
+			}
+			&:after{
+				background-image: url(../img/about/c5l.png);
+			}
 		}
 		&_ct{
 			left:58%;
 			z-index:15;
+			&:hover{
+				z-index: 100;
+			}
+			&:hover .about-faces__detail_ct{
+				visibility: visible;
+			}
+			&:after{
+				background-image: url(../img/about/c6l.png);
+			}
 		}
 		&_ta{
 			left:68%;
 			z-index:16;
+			&:hover{
+				z-index: 100;
+			}
+			&:hover .about-faces__detail_ta{
+				visibility: visible;
+			}
+			&:after{
+				background-image: url(../img/about/c7l.png);
+			}
 		}
 		&_oo{
 			left:78%;
 			z-index:17;
+			&:hover{
+				z-index: 100;
+			}
+			&:hover .about-faces__detail_oo{
+				visibility: visible;
+			}
+			&:after{
+				background-image: url(../img/about/c8l.png);
+			}
 		}
 	}
-	&__link{
-
+}
+.about-faces__detail{
+	visibility: hidden; 
+	text-align: right;
+	padding: 5px 0;
+	.position{
+		@include font-size(14px);
+		margin-bottom: 5px;
+	}
+	.name{
+		@include font-size(17px);
 	}
 }
