@@ -1,18 +1,19 @@
 header.header
     .firstline
-        a.logo(href='#')
-            img.logo-img(src='img/logo.png')
+        .container
+            a.logo(href='#')
+                img.logo-img(src='img/logo.png')
 
-        .landing-menu
-            - var menu_items = ["НОВОСТИ","УСЛУГИ","О НАС","КЛИЕНТЫ","ПРОЕКТЫ","КОНТАКТЫ","ВАКАНСИИ","ОТПРАВИТЬ БРИФ"];
-            ul.menu-list
-                each val in menu_items
-                    li.menu-list__li
-                        a.menu-list__a(href='#') #{val}
-            #hamburger.hamburger
-                span.line
-                span.line
-                span.line
+            .landing-menu
+                - var menu_items = ["НОВОСТИ","УСЛУГИ","О НАС","КЛИЕНТЫ","ПРОЕКТЫ","КОНТАКТЫ","ВАКАНСИИ","ОТПРАВИТЬ БРИФ"];
+                #hamburger.hamburger
+                    span.line
+                    span.line
+                    span.line
+                ul.menu-list
+                    each val in menu_items
+                        li.menu-list__li
+                            a.menu-list__a(href='#') #{val}
             .socials_block
                 ul.social__list
                     li.social__item
@@ -21,3 +22,35 @@ header.header
                         a.social__link.social__link_vk(href='#')
                     li.social__item
                         a.social__link.social__link_insta(href='#')
+    .header-slider
+        ul.bxslider
+            li
+                div.slide-custom__wrap
+                    img(src='img/header-slider1.jpg').bg
+                    .slide__content-wrap.white-text
+                        h1.title-slider
+                            span.bigger Contacto
+                            span communication management
+            li
+                div.slide-custom__wrap
+                    img(src='img/header-slider2.jpg').bg
+                    .slide__content-wrap.black-text
+                        p
+                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            |tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            |quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            |consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            |cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            |proident, sunt in culpa qui officia deserunt mollit anim id est |laborum.
+            li
+                div.slide-custom__wrap
+                    img(src='img/header-slider2.jpg').bg
+                    .slide__content-wrap.white-text
+                        p
+                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            |tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            |quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            |consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            |cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            |proident, sunt in culpa qui officia deserunt mollit anim id est |laborum.
+

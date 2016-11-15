@@ -4,7 +4,6 @@
 .uslugi__wrap{
 	max-width: 1000px;
 	margin: 0 auto;
-    // display: inline-block;
     text-align: justify;
 	text-align-last: justify
   //   &:after{
@@ -14,18 +13,25 @@
   //   }
 }
 .uslugi__item{
+	@include clearfix();
     display: inline-block;
     vertical-align: top;
     position: relative;
-    width: 25%;
+    width: 24%;
     height: 60px;
     line-height: 60px;
     margin-bottom: 63px;
-    @include clearfix();
+    &:hover{
+    	cursor: pointer;
+    }
+    &:hover .uslugi__text{
+    	color:#c8c848;
+    }
 }
 .uslugi{
 	&__icon{
-		float: left;
+		margin-left: 	45px;
+		float:left;
 		@include border-radius(50%);
 		background: #c1bfbc;
 		width: 60px;
@@ -35,13 +41,56 @@
 		&_pr{
 			background-image: url(../img/pr.png);
 		}
-		&_pr:hover .uslugi__icon_pr{
-			background-image: url(../img/pr-hover.png);
+		&_events{
+			background-image: url(../img/events.png);
+		}
+		&_btl{
+			background-image: url(../img/btl.png);
+		}
+		&_creative{
+			background-image: url(../img/creative.png);
+		}
+		&_video{
+			background-image: url(../img/video.png);
+		}
+		&_design{
+			background-image: url(../img/design.png);
+		}
+		&_production{
+			background-image: url(../img/production.png);
+		}
+		&_smm{
+			background-image: url(../img/smm.png);
 		}
 	}
 	&__text{
 		float:left;
-		text-align:left;
+		vertical-align: top;
 		margin-left: 25px;
+		color: #d5d5d5;
 	}
+}
+.uslugi__item_pr:hover .uslugi__icon_pr{
+	background-image: url(../img/pr-hover.png)
+}
+.uslugi__item_events:hover .uslugi__icon_events{
+	background-image: url(../img/events-hover.png)
+}
+.uslugi__item_btl:hover .uslugi__icon_btl{
+	background-image: url(../img/btl-hover.png)
+}
+.uslugi__item_creative:hover .uslugi__icon_creative{
+	background-image: url(../img/creative-hover.png)
+}
+.uslugi__item_video:hover .uslugi__icon_video{
+	background-image: url(../img/video-hover.png)
+}
+.uslugi__item_design:hover .uslugi__icon_design{
+	background-image: url(../img/design-hover.png)
+}
+.uslugi__item_production:hover .uslugi__icon_production{
+	background-image: url(../img/production-hover.png)
+}
+.uslugi__item_smm:hover .uslugi__icon_smm{
+	background-image: url(../img/smm-hover.png)
 }
