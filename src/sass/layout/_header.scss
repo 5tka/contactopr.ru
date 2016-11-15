@@ -3,7 +3,7 @@
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 999;
+        z-index: 66 ;
         width: 100%;
         background: #ffffff;
         height: 40px;
@@ -181,13 +181,13 @@
     .bx-wrapper .bx-prev {
       background: url('../img/bxslider/left_arrow.png') no-repeat;
       background-size: cover;
-      transition: 0.3;
+      transition: 0.3s;
       left: 5%;
     }
     .bx-wrapper .bx-next {
       background: url('../img/bxslider/right_arrow.png') no-repeat;
       background-size: cover;
-      transition: 0.3;
+      transition: 0.3s;
       right: 5%;
     }
     .bx-wrapper .bx-prev:hover,
