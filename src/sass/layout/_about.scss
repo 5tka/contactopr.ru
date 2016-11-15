@@ -1,3 +1,34 @@
+// Стили для секции Про нас
+
+/* Пользовательские настройки плагинов*/
+.about__wrap{
+	max-height: 680px;
+	img{
+		width: 100%;
+		max-height: 680px;
+	}
+	.bx-wrapper .bx-prev {
+	width: 50px;
+	height: 50px;
+	background: url('../img/bxslider/left_arrow.png') no-repeat;
+	background-size: cover;
+	transition: 0.3;
+	left: 1%;
+	}
+	.bx-wrapper .bx-next {
+	width: 50px;
+	height: 50px;
+	background: url('../img/bxslider/right_arrow.png') no-repeat;
+	background-size: cover;
+	transition: 0.3;
+	right: 1%;
+	}
+	.bx-wrapper .bx-prev:hover,
+	.bx-wrapper .bx-next:hover {
+	opacity: 0.8;
+	}
+
+}
 .about{
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#568900+0,84bb14+50,568900+100 */
 	background: #568900; /* Old browsers */
@@ -5,7 +36,7 @@
 	background: -webkit-linear-gradient(top,  #568900 0%,#84bb14 50%,#568900 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom,  #568900 0%,#84bb14 50%,#568900 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#568900', endColorstr='#568900',GradientType=0 ); /* IE6-9 */
-	padding: 135px 0 220px 0;
+	padding: 55px 0 140px 0;
 	color: #fff;
 }
 .about__title{
@@ -18,8 +49,9 @@
 	max-width: 	1370px;
 	@include font-size(28px);
 	margin: 0 auto;
-	margin-bottom: 135px;
+	margin-bottom: 0px;
 }
+// Cтили для списка фотографий сотрудников CONTACTO
 .about-faces{
 	&__wrap{
 		max-width: 	1344px;
@@ -33,19 +65,16 @@
 		width: 200px;
 		height: 100%;
 		border-radius: 50%;
-		background: green;
 		position: absolute;
 		background-size: contain;
 		background-position: center center;
 		cursor: pointer;
-		// overflow: hidden;
 			&:after{
 				content: "";
 				position: absolute;
 				top:0;
 				width: 200px;
 				height: 200px;
-				// z-index: 1;
 				background-repeat: no-repeat;
 				background-size: contain;
 				background-position: center center;
@@ -169,6 +198,7 @@
 		}
 	}
 }
+// Стили для подписей к фотографиям CONTACTO
 .about-faces__detail{
 	visibility: hidden; 
 	text-align: right;
