@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+}
+.brands {
+    &-wrapper {
+        padding: {
+            top: 91px;
+            bottom: 33px;
+        }
+        width: 100%;
+        text-align: center;
+        text-align-last: center;
+    }
+    &-item {
+        display: inline-block;
+        position: relative;
+        width: 15%;
+        text-align: center;
+        width: 293px;
+        height: 76px;
+        line-height: 76px;
+        margin-bottom: 77px;
+        outline: 1px solid red;
+        img {
+            outline: 1px solid red;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            line-height: 80px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+    }
+}
