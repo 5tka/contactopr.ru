@@ -94,3 +94,89 @@
 .uslugi__item_smm:hover .uslugi__icon_smm{
 	background-image: url(../img/smm-hover.png)
 }
+// Стили для ПОПАПА
+.uslugi-popup__wrap{
+	max-width: 768px;
+	margin: 0 auto;
+	.title{
+		padding: 28px 0	;
+		text-align: center;
+		position: relative;
+		margin-bottom: 55px;
+		&:before{
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 1px;
+			background: #e5e5e5;
+			top: 5px;
+			left: 0;
+		}
+		&:after{
+			content:"";
+			position: absolute;
+			width: 100%;
+			height: 10px;
+			background:  url(../img/about/after-line.png) center center no-repeat;
+			background-size: cover;
+			bottom:0;
+			left:0;
+		}
+	}
+	.popup__header{
+		max-width: 	768px;
+		vertical-align: top;
+		text-align: justify;
+		text-align-last: justify;
+		margin-bottom: 	30px;
+	}
+	.popup-header{
+		&__logo{
+			margin-top: 10px;
+			// width: 30%;
+			vertical-align: top;
+			display: inline-block;
+			.logo{
+				float:none;
+			}
+		}
+		&__image{
+			// width: 30%;
+			vertical-align: top;
+			display: inline-block;
+			.uslugi__item{
+				display: block;
+				width: auto;
+				margin-bottom: 	0;
+				height: auto;
+				line-height: 40px;
+			}
+			.uslugi__icon{
+				float:none;
+				margin: 0;
+			}
+			.uslugi__text{
+				float:none;
+				margin:0;
+				text-align-last: center;
+				text-align: center;
+			}
+		}
+		&__social{
+			margin-top: 10px;
+			// width: 30%;
+			vertical-align: top;
+			display: inline-block;
+			.socials_block{
+				margin:0;
+				float: none;
+			}
+		}
+	}
+	.popup__quote{
+		padding: 65px 60px;
+		background: #c1bfbc;
+		text-align: right;
+		margin-bottom: 	50px;
+	}
+}
