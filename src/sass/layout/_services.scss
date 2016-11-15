@@ -1,35 +1,131 @@
-.services{
-    min-width: 990px;
+.wrapper {
+    // overflow-x: hidden;
+}
+.services {
+    overflow-x: hidden;
     background: #717171;
-    padding: {
+    padding:  {
         top: 45px;
-        bottom: 66px;
+        bottom: 175px;
     }
-    &__gallery{
-        &-list{
+}
+
+.tabs {
+    &__gallery {
+        &-list {
             list-style-type: none;
             text-align: center;
+            margin-bottom: 45px;
         }
-        &-item{
+        &-item {
+            cursor: pointer;
             display: inline-block;
             margin-right: 35px;
-            &:last-child{
+            &:last-child {
                 margin-right: 0;
             }
-        }
-        &-link{
             text-decoration: none;
             text-transform: uppercase;
             font-size: em(24px);
             color: #b3b1ac;
             @include transition(.3s);
             outline: none;
-            &:hover{
+            &:hover {
                 color: #d4d4d4;
             }
-            &--active{
+            &--active {
                 color: #b8ce2b;
             }
         }
+    }
+}
+.gallery {
+    &__wrapper {
+        .slick {
+            &-prev,
+            &-next {
+                top: 100%;
+                margin-top: 45px;
+                z-index: 999;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 39px;
+                    height: 39px;
+                }
+            }
+            &-prev {
+                &:before {
+                    left: 60px;
+                    background: url("../img/bxslider/left_arrow.png");
+                }
+            }
+            &-next {
+                &:before {
+                    right: 60px;
+                    background: url("../img/bxslider/right_arrow.png");
+                }
+            }
+        }
+
+        &-item {
+            max-width: 565px;
+            @include clearfix;
+            div {
+                float: left;
+                margin:  {
+                    right: 20px;
+                    bottom: 20px;
+                }
+            }
+            .img-big {
+                width: 350px;
+                height: auto;
+                position: relative;
+                cursor: pointer;
+                img {
+                    width: auto;
+                    height: auto;
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+            .img-sm {
+                width: 175px;
+                height: auto;
+                position: relative;
+                cursor: pointer;
+                img {
+                    width: auto;
+                    height: auto;
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+                .dscr {
+                    text-align: center;
+                    padding:  {
+                        top: 5px;
+                        bottom: 5px;
+                        left: 0;
+                    }
+                }
+            }
+            .dscr {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                background: rgba(0,0,0,0.75);
+                color: #fff;
+                font-size: em(16px);
+                padding:  {
+                    top: 5px;
+                    bottom: 5px;
+                    left: 15px;
+                }
+            }
+        }
+    }
+    &__list {
+        max-width: 100%;
     }
 }
