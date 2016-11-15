@@ -1,0 +1,83 @@
+.about{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#568900+0,84bb14+50,568900+100 */
+	background: #568900; /* Old browsers */
+	background: -moz-linear-gradient(top,  #568900 0%, #84bb14 50%, #568900 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #568900 0%,#84bb14 50%,#568900 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #568900 0%,#84bb14 50%,#568900 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#568900', endColorstr='#568900',GradientType=0 ); /* IE6-9 */
+	padding: 135px 0 220px 0;
+}
+.about__title{
+	@include font-size(60px);
+	text-align: center;
+	margin-bottom: 88px;
+	text-transform: uppercase;
+}
+.about__details{
+	@include font-size(30px);
+	margin-bottom: 135px;
+}
+.about-faces{
+	&__wrap{
+
+	}
+	&__list{
+		position: relative;
+		height: 150.75px;
+	}
+	&__item{
+		width: 12%;
+		height: 100%;
+		border-radius: 50%;
+		background: green;
+		position: absolute;
+		background-size: contain;
+		background-position: center center;
+		cursor: pointer;
+		overflow: hidden;
+		& img{
+			width: 100%;
+			height: 100%;
+			-webkit-filter: grayscale(100%);
+			&:hover{
+				-webkit-filter: grayscale(0);  
+			}  
+		}
+		&_c{
+			left:8%;
+			z-index:10;
+			//  -webkit-filter: grayscale(100%);  
+		}
+		&_o{
+			left:18%;
+			z-index:11;
+		}
+		&_n{
+			left:28%;
+			z-index:12;
+		}
+		&_t{
+			left:38%;
+			z-index:13;
+		}
+		&_a{
+			left:48%;
+			z-index:14;
+		}
+		&_ct{
+			left:58%;
+			z-index:15;
+		}
+		&_ta{
+			left:68%;
+			z-index:16;
+		}
+		&_oo{
+			left:78%;
+			z-index:17;
+		}
+	}
+	&__link{
+
+	}
+}
