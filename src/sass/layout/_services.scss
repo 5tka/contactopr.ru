@@ -1,13 +1,15 @@
+.wrapper {
+    overflow-x: hidden;
+}
 .services {
-    min-height: 990px;
     background: #717171;
     padding:  {
         top: 45px;
-        bottom: 66px;
+        bottom: 175px;
     }
 }
+
 .tabs {
-    /*text-align: center;*/
     &__gallery {
         &-list {
             list-style-type: none;
@@ -38,18 +40,48 @@
 }
 .gallery {
     &__wrapper {
-        outline: 1px solid red;
+        .slick {
+            &-prev,
+            &-next {
+                top: 100%;
+                margin-top: 45px;
+                z-index: 999;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 39px;
+                    height: 39px;
+                }
+            }
+            &-prev {
+                &:before {
+                    left: 60px;
+                    background: url("../img/bxslider/left_arrow.png");
+                }
+            }
+            &-next {
+                &:before {
+                    right: 60px;
+                    background: url("../img/bxslider/right_arrow.png");
+                }
+            }
+        }
+
         &-item {
-            /*div{
-                display: inline-block;
-                margin: {
+            max-width: 565px;
+            @include clearfix;
+            div {
+                float: left;
+                margin:  {
                     right: 20px;
                     bottom: 20px;
                 }
-            }*/
+            }
             .img-big {
-                width: 700px !important;
-                height: 350px !important;
+                width: 350px;
+                height: auto;
+                position: relative;
+                cursor: pointer;
                 img {
                     width: auto;
                     height: auto;
@@ -58,15 +90,41 @@
                 }
             }
             .img-sm {
-                width: 350px !important;
-                height: 350px !important;
+                width: 175px;
+                height: auto;
+                position: relative;
+                cursor: pointer;
                 img {
                     width: auto;
                     height: auto;
                     max-width: 100%;
                     max-height: 100%;
                 }
+                .dscr {
+                    text-align: center;
+                    padding:  {
+                        top: 5px;
+                        bottom: 5px;
+                        left: 0;
+                    }
+                }
+            }
+            .dscr {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                background: rgba(0,0,0,0.75);
+                color: #fff;
+                font-size: em(16px);
+                padding:  {
+                    top: 5px;
+                    bottom: 5px;
+                    left: 15px;
+                }
             }
         }
+    }
+    &__list {
+        max-width: 100%;
     }
 }
