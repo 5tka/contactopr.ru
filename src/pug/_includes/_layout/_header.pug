@@ -6,14 +6,17 @@ header.header
 
             .landing-menu
                 - var menu_items = ["НОВОСТИ","УСЛУГИ","О НАС","КЛИЕНТЫ","ПРОЕКТЫ","КОНТАКТЫ","ВАКАНСИИ","ОТПРАВИТЬ БРИФ"];
+                - var menu_items_link = ["#news","#uslugi","#about","#clients","#projects","#projects","#","#"];
                 #hamburger.hamburger
                     span.line
                     span.line
                     span.line
                 ul.menu-list
-                    each val in menu_items
+                    - var i = 0;
+                    while i < 7
                         li.menu-list__li
-                            a.menu-list__a(href='#') #{val}
+                            a.menu-list__a(href=menu_items_link[i]) #{menu_items[i]}
+                        - i=i+1
             .socials_block
                 ul.social__list
                     li.social__item
@@ -22,7 +25,7 @@ header.header
                         a.social__link.social__link_vk(href='#')
                     li.social__item
                         a.social__link.social__link_insta(href='#')
-    .header-slider
+    .header-slider#news
         ul.bxslider
             li
                 div.slide-custom__wrap

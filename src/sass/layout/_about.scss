@@ -2,6 +2,8 @@
 
 /* Пользовательские настройки плагинов*/
 .about__wrap{
+	// overflow: hidden;
+	max-height: 680px;
 	// max-height: 680px;
 	img{
 		width: 100%;
@@ -91,9 +93,9 @@
 			border-radius: 50%;
 			-webkit-filter: grayscale(100%);
 			&:hover{
-				-webkit-filter: grayscale(0);  
+				-webkit-filter: grayscale(0);
 				z-index: 100;
-			}  
+			}
 		}
 		&_c{
 			left:8%;
@@ -204,7 +206,7 @@
 // Стили для подписей к фотографиям CONTACTO
 .about-faces__detail{
 	visibility: hidden;
-	// display: none	; 
+	// display: none	;
 	position: absolute;
 	text-align: right;
 	padding: 5px 0;
@@ -248,11 +250,11 @@
 				height: auto;
 				vertical-align: top	;
 			    text-align: justify;
-			    text-align-last: justify;	
+			    text-align-last: justify;
 			}
 			&__item{
 			display: inline-block;
-			position: relative;	
+			position: relative;
 			& img{
 			}
 			&_c{
