@@ -292,6 +292,15 @@
 	}
 }
 @include breakpoint(782){
+	.about__title{
+			@include font-size(25px);
+			margin-bottom: 20px;
+	}
+	.about__details{
+		@include font-size(16px);
+		text-align: center;
+		margin-bottom: 20px;
+	}
 	.about-faces__item{
 		width: 145px;
 		&:after{

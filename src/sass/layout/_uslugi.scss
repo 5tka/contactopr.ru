@@ -255,6 +255,26 @@
 		}
 	}
 }
+.close__popup{
+	position: absolute;
+	top: 13px;
+	right: 27px;
+	width: 41px;
+	height: 41px;
+	background: url(../img/icons/close-popup.png);
+	background-size: 65%;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	background-clip: padding-box;
+	cursor: pointer;
+	transition: .25s;
+	z-index: 9999;
+	}
+.close__popup:hover {
+    border-color: #61a327;
+}
 .b-modal{
 	z-index: 1000 !important;	
 }
@@ -280,8 +300,12 @@
 	}
 
 }
-@include breakpoint(760){
-
+@include breakpoint(768){
+	.uslugi-popup__wrap{
+		// max-width: 768px!important;
+		margin-left: 0;
+		left: 0!important;	
+	}
 }
 @include breakpoint(624){
 	.uslugi__wrap{
