@@ -2,8 +2,9 @@
 
 /* Пользовательские настройки плагинов*/
 .about__wrap{
-	overflow: hidden;
+	// overflow: hidden;
 	max-height: 680px;
+	// max-height: 680px;
 	img{
 		width: 100%;
 		max-height: 680px;
@@ -11,7 +12,7 @@
 	.bx-wrapper .bx-prev {
 	width: 50px;
 	height: 50px;
-	background: url('../img/bxslider/left_arrow.png') no-repeat;
+	background: url('../img/slides/6/arrow_left.png') no-repeat;
 	background-size: cover;
 	transition: 0.3;
 	left: 1%;
@@ -19,7 +20,7 @@
 	.bx-wrapper .bx-next {
 	width: 50px;
 	height: 50px;
-	background: url('../img/bxslider/right_arrow.png') no-repeat;
+	background: url('../img/slides/6/arrow_right.png') no-repeat;
 	background-size: cover;
 	transition: 0.3;
 	right: 1%;
@@ -27,6 +28,9 @@
 	.bx-wrapper .bx-prev:hover,
 	.bx-wrapper .bx-next:hover {
 	opacity: 0.8;
+	}
+	.bx-wrapper{
+		margin-bottom: 0;
 	}
 
 }
@@ -202,6 +206,8 @@
 // Стили для подписей к фотографиям CONTACTO
 .about-faces__detail{
 	visibility: hidden;
+	// display: none	;
+	position: absolute;
 	text-align: right;
 	padding: 5px 0;
 	.position{
@@ -210,5 +216,89 @@
 	}
 	.name{
 		@include font-size(17px);
+	}
+}
+// ------------------------------------MEDIA---------------------------------
+@include breakpoint(1300){
+	.about__title{
+			margin-bottom: 40px;
+	}
+	.about__details{
+		@include font-size(21px);
+		text-align: center;
+		margin-bottom: 20px;
+	}
+}
+@include breakpoint(1050){
+	.bx-wrapper{
+		margin-bottom: 0;
+	}
+	.about{
+		padding:30px 0 40px;
+	}
+	.about__title{
+			@include font-size(45px);
+			margin-bottom: 40px;
+	}
+	.about__details{
+		@include font-size(16px);
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.about-faces{
+			&__list{
+				height: auto;
+				vertical-align: top	;
+			    text-align: justify;
+			    text-align-last: justify;
+			}
+			&__item{
+			display: inline-block;
+			position: relative;
+			& img{
+			}
+			&_c{
+				left:auto;
+			}
+			&_o{
+				left:auto;
+			}
+			&_n{
+				left:auto;
+			}
+			&_t{
+				left:auto;
+			}
+			&_a{
+				left:auto;
+			}
+			&_ct{
+				left:auto;
+			}
+			&_ta{
+				left:auto;
+			}
+			&_oo{
+				left:auto;
+			}
+		}
+	}
+}
+@include breakpoint(920){
+	.about-faces__item{
+		width: 180px;
+		&:after{
+			width: 	180px;
+			height: 180px;
+		}
+	}
+}
+@include breakpoint(782){
+	.about-faces__item{
+		width: 145px;
+		&:after{
+			width: 	145px;
+			height: 145px;
+		}
 	}
 }

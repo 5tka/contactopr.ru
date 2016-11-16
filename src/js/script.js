@@ -90,3 +90,9 @@ $(document).ready(function(){
 		return this.each(createTabs);
 	};
 })(jQuery);
+// POPUP
+$('.uslugi__item').on('click', function(event) {
+  event.preventDefault();
+  $('.uslugi-popup__wrap').bPopup({
+  });
+});
