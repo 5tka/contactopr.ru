@@ -255,3 +255,52 @@
 		}
 	}
 }
+.b-modal{
+	z-index: 1000 !important;	
+}
+.uslugi-popup__wrap{
+	z-index: 1001 !important;
+}
+//------------------------------------------- Media -----------------------------------------------
+@include breakpoint(1050){
+	.uslugi{
+		padding: 60px 0 30px;
+	}
+	.uslugi__wrap{
+		.uslugi__icon{
+			margin-left: 0;
+			float: none;
+			margin: 0 auto;
+		}
+		.uslugi__text {
+			margin-left: 0;
+			float: none;
+			text-align-last: center;
+		}
+	}
+
+}
+@include breakpoint(760){
+
+}
+@include breakpoint(624){
+	.uslugi__wrap{
+		text-align-last: center;
+	}
+	.uslugi__item {
+		width: 25%;
+	}
+}
+@include breakpoint(400){
+	.uslugi{
+		padding: 30px 0 15px;
+	}
+	.uslugi__wrap{
+		text-align-last: justify;
+		text-align-last: justify;
+	}
+	.uslugi__item {
+		width: 49%;
+	}
+}
+
