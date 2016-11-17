@@ -1,9 +1,13 @@
 // Стили для секции Про нас
 
 /* Пользовательские настройки плагинов*/
+body, html{
+	height: 100%;
+}
 .about__wrap{
+	// height: 100vh;
 	// overflow: hidden;
-	max-height: 680px;
+	// max-height: 680px;
 	// max-height: 680px;
 	img{
 		width: 100%;
@@ -12,7 +16,7 @@
 	.bx-wrapper .bx-prev {
 	width: 50px;
 	height: 50px;
-	background: url('../img/slides/6/arrow_left.png') no-repeat;
+	background: url('../img/about/arrow_left.png') no-repeat;
 	background-size: cover;
 	transition: 0.3;
 	left: 1%;
@@ -20,19 +24,33 @@
 	.bx-wrapper .bx-next {
 	width: 50px;
 	height: 50px;
-	background: url('../img/slides/6/arrow_right.png') no-repeat;
+	background: url('../img/about/arrow_right.png') no-repeat;
 	background-size: cover;
 	transition: 0.3;
 	right: 1%;
 	}
 	.bx-wrapper .bx-prev:hover,
 	.bx-wrapper .bx-next:hover {
-	opacity: 0.8;
+		// background: #000;
+		opacity: 0.8;
+	}
+	.bx-prev, .bx-next{
+		content: "";
+		position: absolute;
+		top:0;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		opacity: 0.45;
+		border-radius: 50%;
+		z-index: 9999;
 	}
 	.bx-wrapper{
 		margin-bottom: 0;
+	}		
+	.bx-viewport{
+		height: auto !important;
 	}
-
 }
 .about{
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#568900+0,84bb14+50,568900+100 */
@@ -43,18 +61,20 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#568900', endColorstr='#568900',GradientType=0 ); /* IE6-9 */
 	padding: 55px 0 140px 0;
 	color: #fff;
+	min-height: 680px;
 }
 .about__title{
-	@include font-size(60px);
+	@include font-size(40px);
 	text-align: center;
 	margin-bottom: 88px;
 	text-transform: uppercase;
 }
 .about__details{
-	max-width: 	1370px;
-	@include font-size(28px);
+	max-width: 	1100px;
+	@include font-size(20px);
+	text-align: center;
 	margin: 0 auto;
-	margin-bottom: 0px;
+	margin-bottom:82px;
 }
 // Cтили для списка фотографий сотрудников CONTACTO
 .about-faces{
@@ -74,15 +94,30 @@
 		background-size: contain;
 		background-position: center center;
 		cursor: pointer;
+			&:before{
+				content: "";
+				position: absolute;
+				top:0;
+				width: 100%;
+				height: 100%;
+				background: #000;
+				opacity: 0.45;
+				border-radius: 50%;
+				z-index: 1;
+			}
+			&:hover:before{
+				display: none;
+			}
 			&:after{
 				content: "";
 				position: absolute;
 				top:0;
-				width: 200px;
-				height: 200px;
+				width: 100%;
+				height: 100%;
 				background-repeat: no-repeat;
 				background-size: contain;
 				background-position: center center;
+				z-index: 2;
 			}
 			&:hover:after{
 				display: none;
@@ -221,15 +256,18 @@
 // ------------------------------------MEDIA---------------------------------
 @include breakpoint(1300){
 	.about__title{
-			margin-bottom: 40px;
+		margin-bottom: 80px;
 	}
 	.about__details{
 		@include font-size(21px);
 		text-align: center;
-		margin-bottom: 20px;
+		margin-bottom: 40px;
 	}
 }
 @include breakpoint(1050){
+	.about-faces__detail{
+		display: none;
+	}
 	.bx-wrapper{
 		margin-bottom: 0;
 	}
@@ -284,16 +322,20 @@
 		}
 	}
 }
-@include breakpoint(920){
+@include breakpoint(940){
+	.about{
+		min-height:auto;
+	}
+	.about-faces__list{
+		padding: 0 25px;
+	}
 	.about-faces__item{
 		width: 180px;
 		&:after{
-			width: 	180px;
-			height: 180px;
 		}
 	}
 }
-@include breakpoint(782){
+@include breakpoint(854){
 	.about__title{
 			@include font-size(25px);
 			margin-bottom: 20px;
@@ -306,8 +348,25 @@
 	.about-faces__item{
 		width: 145px;
 		&:after{
-			width: 	145px;
-			height: 145px;
+		}
+	}
+}
+@include breakpoint(705){
+	.about-faces__item{
+		width: 120px;
+		&:after{
+		}
+	}
+	.about__details{
+		@include font-size(14px);
+		text-align: center;
+		margin-bottom: 10px;
+	}
+}
+@include breakpoint(597){
+	.about-faces__item{
+		width: 40%;
+		&:after{
 		}
 	}
 }

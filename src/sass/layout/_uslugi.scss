@@ -104,6 +104,7 @@
 		text-align: center;
 		position: relative;
 		margin-bottom: 55px;
+		padding-left: 	25px;
 		&:before{
 			content: "";
 			position: absolute;
@@ -137,7 +138,7 @@
 			// width: 30%;
 			vertical-align: top;
 			display: inline-block;
-		    margin-left: 3px;
+		    margin-left: 15px;
 			.logo{
 				float:none;
 				margin-top: 0;
@@ -282,7 +283,7 @@
 	z-index: 1001 !important;
 }
 //------------------------------------------- Media -----------------------------------------------
-@include breakpoint(1050){
+@include breakpoint(1060){
 	.uslugi{
 		padding: 60px 0 30px;
 	}
@@ -325,6 +326,43 @@
 	}
 	.uslugi__item {
 		width: 49%;
+	}
+	.uslugi-popup__wrap .title{
+		margin-bottom: 	10px;
+	}
+	.uslugi-popup__wrap .popup__header{
+		text-align-last: auto;
+		text-align: auto;
+		margin-bottom: 15px;
+	}
+	.uslugi-popup__wrap .popup-header__logo{
+		margin-left: 0;
+		display:block;
+	}
+	.uslugi-popup__wrap .popup-header__logo .logo {
+		display: block;
+		margin: 0 auto;
+		max-width: 	150px;
+	}
+	.uslugi-popup__wrap .popup-header__image{
+		display: block;
+	}
+	.uslugi-popup__wrap .popup-header__image .uslugi__icon{
+		margin: 0 auto;
+	}
+	.uslugi-popup__wrap .popup__quote{
+	    padding: 35px 30px;
+	}
+	.uslugi-popup__wrap .title{
+		padding-left: 0;
+	}
+	.uslugi-popup__wrap .popup-header__social{
+		display: block	;
+	}
+	.uslugi-popup__wrap .popup-header__social .socials_block{
+		display: block;
+		margin: 0 auto;
+		max-width: 150px;
 	}
 }
 
