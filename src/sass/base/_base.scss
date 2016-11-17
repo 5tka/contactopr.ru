@@ -108,9 +108,10 @@ body,html {
 }
 .container {
 	width: 93.75%;
+  max-width: 1240px;
 	margin: 0 auto;
 	@include clearfix();
 }
 .dn{
-	display: none;	
+	display: none;
 }

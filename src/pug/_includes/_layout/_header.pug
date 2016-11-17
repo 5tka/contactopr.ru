@@ -12,11 +12,9 @@ header.header
                     span.line
                     span.line
                 ul.menu-list
-                    - var i = 0;
-                    while i < 7
+                    - for (var i = 0; i< menu_items.length; i++)
                         li.menu-list__li
                             a.menu-list__a(href=menu_items_link[i]) #{menu_items[i]}
-                        - i=i+1
             .socials_block
                 ul.social__list
                     li.social__item
