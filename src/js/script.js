@@ -1,7 +1,20 @@
 $(document).ready(function(){
 	  $(".hamburger").click(function(){
 	    $(this).toggleClass("is-active");
+	    $("#menu").toggleClass("db");
 	  });
+	$(window).resize(function() {
+		var t = $(window).width();
+		if (t >= 1070 && ($(".hamburger").removeClass("is-active"))) {
+		$("#menu").removeClass("db")
+	}
+
+		// 	if($("#hamburger").hasClass("is-active") && t >= 1070){
+		// 	// alert(1)
+		// 	$(".hamburger").removeClass("is-active");
+		// 	$("#menu").removeClass("db");
+		// }
+	});
 
 	  $('.header-slider .bxslider').bxSlider({
 			pager: false
