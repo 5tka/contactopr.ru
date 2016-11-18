@@ -5,7 +5,7 @@
             background-size: cover;
     padding:  {
         top: 45px;
-        bottom: 175px;
+        bottom: 145px;
     }
 }
 .tabs {
@@ -25,6 +25,7 @@
             text-decoration: none;
             text-transform: uppercase;
             font-size: em(24px);
+            font-weight: 600;
             color: #b3b1ac;
             @include transition(.3s);
             outline: none;

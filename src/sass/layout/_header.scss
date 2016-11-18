@@ -107,8 +107,7 @@
 /* Блок соц сетей */
 .socials_block {
     display: inline-block;
-    // margin-left: 40px;
-    margin-top: 5px;
+    margin-top: 7px;
     position: relative;
     z-index: 2;
     float: right;
@@ -125,24 +124,30 @@
 }
 .social__link {
     background-repeat: no-repeat;
-    width: 32px;
-    height: 32px;
+    background-size: contain;
+    background-position: center center;
+    width: 26px;
+    height: 26px;
     display: block;
 }
 .social__link_vk, .social__link_vk:hover {
-    background: url(../img/icons/vk-square.svg);
+    background-image: url(../img/icons/vk-square.svg);
 }
 .social__link_fb, .social__link_fb:hover {
-    background: url(../img/icons/fb-square.svg);
+    background-image: url(../img/icons/fb-square.svg);
 }
 .social__link_insta, .social__link_insta:hover {
-    background: url(../img/icons/insta-square.svg);
+    background-image: url(../img/icons/insta-square.svg);
 }
 .header-slider {
+    .bx-wrapper {
+        margin: 0 auto 0;
+    }
     .slide-custom__wrap {
         position: relative;
-        max-height: 600px;
-        // min-height: 600px;
+        min-height: 600px;
+        max-height: 100vh;
+        height: 100vh;
         overflow: hidden;
         img.bg {
             max-width: 100%;
@@ -209,13 +214,13 @@
       background: url('../img/bxslider/left_arrow.png') no-repeat;
       background-size: cover;
       transition: 0.3s;
-      left: 5%;
+      left: 3.125%;
     }
     .bx-wrapper .bx-next {
       background: url('../img/bxslider/right_arrow.png') no-repeat;
       background-size: cover;
       transition: 0.3s;
-      right: 5%;
+      right: 3.125%;
     }
     .bx-wrapper .bx-prev:hover,
     .bx-wrapper .bx-next:hover {
@@ -297,6 +302,7 @@
     }
     .header-slider .slide-custom__wrap img.bg {
         max-width: 125%;
+        margin-left: -12.5%;
     }
 }
 
@@ -317,14 +323,12 @@
 
     .header-slider .slide-custom__wrap img.bg {
         max-width: 150%;
+        margin-left: -25%;
     }
 
 
 }
 @media only screen and (max-width: 450px) {
-    // .dispn{
-    //     display: inline-block !important;
-    // }
     .landing-menu{
         right: 2%;
     }

@@ -1,39 +1,27 @@
 .letters {
-    background: #000000;
+    padding-bottom: 50px;
+    background: rgb(0,0,0);
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjY2JSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzNDM0MzMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,1) 66%, rgba(52,52,51,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(66%,rgba(0,0,0,1)), color-stop(100%,rgba(52,52,51,1)));
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 66%,rgba(52,52,51,1) 100%);
+    background: -o-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 66%,rgba(52,52,51,1) 100%);
+    background: -ms-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 66%,rgba(52,52,51,1) 100%);
+    background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 66%,rgba(52,52,51,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#343433',GradientType=0 );
 }
 .letters_label {
     color: #fff;
     font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
     text-align: center;
     margin: 80px 0px;
-    font-weight: 300;
 }
 .letters-slider-wrap {
     position: relative;
 }
 
-    // #letters__left-arrow {
-    //     position: absolute;
-    //     left: 0;
-    //     top: 0;
-    //     bottom: 0;
-    //     width: 79px;
-    //     height: 79px;
-    //     cursor: pointer;
-    //     background: url(../img/slides/6/arrow_left.png) center center no-repeat;
-    //     margin: auto;
-    // }
-    // #letters__right-arrow {
-    //     right: 0;
-    //     top: 0;
-    //     bottom: 0;
-    //     position: absolute;
-    //     width: 79px;
-    //     height: 79px;
-    //     cursor: pointer;
-    //     background: url(../img/slides/6/arrow_right.png) center center no-repeat;
-    //     margin: auto;
-    // }
 .letters-wrap  {
     // height: 736px;
     position: relative;
@@ -181,10 +169,13 @@
         left: -60px;
         top: 0;
         bottom: 0;
-        width: 79px;
-        height: 79px;
+        width: 39px;
+        height: 39px;
         cursor: pointer;
-        background: url(../img/slides/6/arrow_left.png) center center no-repeat;
+        background-image: url(../img/slides/6/arrow_left.png) ;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
         margin: auto;
     }
     .slick-next:before  {
@@ -193,10 +184,13 @@
         top: 0;
         bottom: 0;
         position: absolute;
-        width: 79px;
-        height: 79px;
+        width: 39px;
+        height: 39px;
         cursor: pointer;
-        background: url(../img/slides/6/arrow_right.png) center center no-repeat;
+        background-image: url(../img/slides/6/arrow_right.png);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
         margin: auto;
     }
 
@@ -282,6 +276,9 @@
 
         }
     }
+    .letters {
+    padding-bottom: 40px;
+    }
 }
 @media only screen and (max-width: 800px) {
 .contacts_block {
@@ -305,13 +302,15 @@
 }
 }
 @media only screen and (max-width: 768px) {
+    .letters {
+    padding-bottom: 20px;
+    }
     .letters_label {
         margin: 50px 0;
         font-size: 25px;
     }
     .letters-wrap  {
         .slick-slide {
-            padding-bottom: 110px;
             img {
                 max-height: 470px;
             }
@@ -364,13 +363,15 @@
     }
 }
 @media only screen and (max-width: 480px) {
+    .letters {
+    padding-bottom: 0px;
+    }
     .letters_label {
         margin: 30px 0;
         font-size: 20px;
     }
     .letters-wrap  {
         .slick-slide {
-            padding-bottom: 105px;
            &:after {
                 height: 100px;
             }
