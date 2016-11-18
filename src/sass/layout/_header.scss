@@ -139,15 +139,24 @@
 .social__link_insta, .social__link_insta:hover {
     background-image: url(../img/icons/insta-square.svg);
 }
+@media only screen and (min-width: 1025px){
+    .header-slider {
+        .slide-custom__wrap {
+            min-height: 600px;
+            max-height: 100vh;
+            height: 100vh;
+            }
+    }
+}
 .header-slider {
     .bx-wrapper {
         margin: 0 auto 0;
     }
     .slide-custom__wrap {
         position: relative;
-        min-height: 600px;
-        max-height: 100vh;
-        height: 100vh;
+        max-height: 600px;
+        // max-height: 100vh;
+        // height: 100vh;
         overflow: hidden;
         img.bg {
             max-width: 100%;
