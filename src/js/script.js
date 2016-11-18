@@ -1,7 +1,20 @@
 $(document).ready(function(){
 	  $(".hamburger").click(function(){
 	    $(this).toggleClass("is-active");
+	    $("#menu").toggleClass("db");
 	  });
+	$(window).resize(function() {
+		var t = $(window).width();
+		if (t >= 1070 && ($(".hamburger").removeClass("is-active"))) {
+		$("#menu").removeClass("db")
+	}
+
+		// 	if($("#hamburger").hasClass("is-active") && t >= 1070){
+		// 	// alert(1)
+		// 	$(".hamburger").removeClass("is-active");
+		// 	$("#menu").removeClass("db");
+		// }
+	});
 
 	  $('.header-slider .bxslider').bxSlider({
 			pager: false
@@ -44,8 +57,7 @@ $(document).ready(function(){
 	  ]
 	});
 
-	$('.fancybox').fancybox({'width':1100, afterClose: function() {animation=false;}});
-
+$('.fancybox').fancybox({'width':1100, afterClose: function() {animation=false;}});
 	$(".tabs").lightTabs();
 
 		$('.brands-wrapper').slick({
@@ -60,6 +72,12 @@ $(document).ready(function(){
 			centerMode: true,
 			variableWidth: true
 		});
+        $('.gallery__wrapper-item div').on('click',function(){
+            $('.services__popup').bPopup({
+                closeClass: 'none',
+            });
+            return false;
+        })
 });
 
 (function($){

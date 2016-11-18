@@ -1,15 +1,13 @@
-.wrapper {
-    // overflow-x: hidden;
-}
 .services {
     overflow-x: hidden;
-    background: #717171;
+    background: url("../img/services_bg.jpg") center center no-repeat;
+    -webkit-background-size: cover;
+            background-size: cover;
     padding:  {
         top: 45px;
         bottom: 175px;
     }
 }
-
 .tabs {
     &__gallery {
         &-list {
@@ -41,12 +39,15 @@
 }
 .gallery {
     &__wrapper {
+        div {
+            outline: none;
+        }
         .slick {
             &-prev,
             &-next {
                 top: 100%;
                 margin-top: 45px;
-                z-index: 999;
+                z-index: 10;
                 &:before {
                     content: "";
                     position: absolute;
@@ -114,7 +115,7 @@
                 position: absolute;
                 bottom: 0;
                 width: 100%;
-                background: rgba(0,0,0,0.75);
+                background: rgba(0,0,0,.75);
                 color: #fff;
                 font-size: em(16px);
                 padding:  {
@@ -127,5 +128,119 @@
     }
     &__list {
         max-width: 100%;
+    }
+}
+.services__popup {
+    max-width: 768px;
+    min-height: 500px;
+    margin: 0 auto;
+    background: url("../img/services_bg.jpg");
+    background-repeat: round;
+    display: none;
+    .services__title-photo {
+        position: relative;
+        img {
+            display: block;
+        }
+    }
+    &-ics {
+        text-align: center;
+        @include clearfix;
+        position: absolute;
+        transform: translate3d(-50%, -50%, 0);
+        top: 50%;
+        left: 50%;
+    }
+    .s__popup-item {
+        display: inline-block;
+        margin-right: 65px;
+        &:last-of-type {
+            margin-right: 0;
+        }
+        .uslugi__text {
+            float: none;
+            margin: 0;
+        }
+    }
+    .uslugi {
+        &__icon {
+            float: none;
+            margin: 0;
+            display: inline-block;
+            &_pr {
+                background-image: url(../img/pr-hover.png);
+            }
+            &_events {
+                background-image: url(../img/events-hover.png);
+            }
+        }
+    }
+}
+.services__client,
+.services__todo,
+.services__result {
+    padding:  {
+        top: 35px;
+        bottom: 45px;
+    }
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.services__client {
+    background: #c8c848;
+    text-align: center;
+    .dscr-title {
+        font-size: em(30px);
+        display: block;
+        font-weight: bold;
+        margin-bottom: 25px;
+    }
+    .ttur,
+    .ttll {
+        display: inline-block;
+    }
+    .ttur {
+        text-transform: uppercase;
+        text-align: right;
+    }
+    .ttll {
+        text-align: left;
+    }
+}
+.services__todo,
+.services__result {
+    background: #c1bfbc;
+}
+.services__info {
+    text-align: center;
+    padding:  {
+        top: 70px;
+        bottom: 70px;
+    }
+    color: #939393;
+}
+.services__footer {
+    .services__img-wrap {
+        @include clearfix();
+    }
+    .img-item {
+        width: 33.3%;
+        float: left;
+        img,
+        iframe {
+            display: block;
+        }
+        iframe {
+            width: 256px;
+            height: 171px;
+        }
+    }
+}
+@include breakpoint(800) {
+    .services__footer {
+        .img-item {
+            width: 50%;
+        }
     }
 }

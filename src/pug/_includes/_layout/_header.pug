@@ -2,7 +2,7 @@ header.header
     .firstline
         .container
             a.logo(href='#')
-                img.logo-img(src='img/logo.png')
+                img.logo-img(src='img/logo.svg')
 
             .landing-menu
                 - var menu_items = ["НОВОСТИ","УСЛУГИ","О НАС","КЛИЕНТЫ","ПРОЕКТЫ","КОНТАКТЫ","ВАКАНСИИ","ОТПРАВИТЬ БРИФ"];
@@ -11,11 +11,20 @@ header.header
                     span.line
                     span.line
                     span.line
-                ul.menu-list
-                    - for (var i = 0; i< menu_items.length; i++)
-                        li.menu-list__li
-                            a.menu-list__a(href=menu_items_link[i]) #{menu_items[i]}
-            .socials_block
+            ul.menu-list#menu
+                li.menu-list__li
+                    .socials_block_menu
+                        ul.social__list
+                            li.social__item
+                                a.social__link.social__link_fb(href='#')
+                            li.social__item
+                                a.social__link.social__link_vk(href='#')
+                            li.social__item
+                                a.social__link.social__link_insta(href='#')
+                - for (var i = 0; i< menu_items.length; i++)
+                    li.menu-list__li
+                        a.menu-list__a(href=menu_items_link[i]) #{menu_items[i]}
+            .socials_block.socials_block-header
                 ul.social__list
                     li.social__item
                         a.social__link.social__link_fb(href='#')
