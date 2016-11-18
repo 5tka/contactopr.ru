@@ -225,22 +225,45 @@
         @include clearfix();
     }
     .img-item {
-        width: 33.3%;
+        width: 33.333333%;
         float: left;
         img,
         iframe {
             display: block;
         }
         iframe {
-            width: 256px;
-            height: 171px;
+            height: 170px;
+            /*width: 256px;*/
+            /*width: 100%;*/
+            /*height: 100%;*/
         }
     }
 }
+
 @include breakpoint(800) {
+    .services {
+        padding-bottom: 95px;
+    }
     .services__footer {
         .img-item {
             width: 50%;
         }
+    }
+    .gallery__wrapper {
+        .slick-next:before,
+        .slick-prev:before {
+            bottom: 0;
+        }
+    }
+}
+@include breakpoint(500) {
+    .gallery__wrapper {
+        .slick-next:before,
+        .slick-prev:before {
+            bottom: 10px;
+        }
+    }
+    .services {
+        padding-bottom: 70px;
     }
 }

@@ -15,10 +15,9 @@
     &-item {
         display: inline-block;
         position: relative;
-        width: 15%;
-        text-align: center;
-        width: 293px;
+        width: 200px;
         height: 80px;
+        text-align: center;
         line-height: 77px;
         margin-bottom: 77px;
         img {
@@ -34,6 +33,31 @@
             &:hover {
                 filter: grayscale(0);
             }
+        }
+    }
+}
+@include breakpoint(850) {
+    .brands-wrapper {
+        padding:  {
+            top: 33px;
+        }
+    }
+    .brands-item {
+        margin:  {
+            bottom: 33px;
+        }
+    }
+}
+@include breakpoint(450) {
+    .brands-wrapper {
+        padding:  {
+            top: 15px;
+            bottom: 15px;
+        }
+    }
+    .brands-item {
+        margin:  {
+            bottom: 5px;
         }
     }
 }

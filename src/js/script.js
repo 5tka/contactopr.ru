@@ -62,7 +62,7 @@ $('.fancybox').fancybox({'width':1100, afterClose: function() {animation=false;}
 
 		$('.brands-wrapper').slick({
 			infinite: true,
-			autoplay: true,
+			// autoplay: true,
 			autoplaySpeed: 2500
 		});
 		$('.gallery__list').slick({
