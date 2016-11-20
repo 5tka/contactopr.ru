@@ -142,7 +142,7 @@
 			// width: 30%;
 			vertical-align: top;
 			display: inline-block;
-		    margin-left: 15px;
+		    margin-left: 0px;
 			.logo{
 				float:none;
 				margin-top: 0;
@@ -281,10 +281,10 @@
     border-color: #61a327;
 }
 .b-modal{
-	z-index: 1000 !important;	
+	// z-index: 1000 !important;	
 }
 .uslugi-popup__wrap{
-	z-index: 1001 !important;
+	// z-index: 1001 !important;
 }
 //------------------------------------------- Media -----------------------------------------------
 @include breakpoint(1060){
