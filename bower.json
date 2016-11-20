@@ -30,6 +30,7 @@
     "jeet": "^7.0.0",
     "bxslider": "latest",
     "bxslider-4": "^4.2.5",
-    "slick": "*"
+    "slick": "*",
+    "jquery-mousewheel": "^3.1.13"
   }
 }

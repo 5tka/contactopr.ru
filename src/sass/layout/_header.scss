@@ -1,3 +1,18 @@
+// paralax styles
+#center .sliders {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #fff;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+}
+
 .header {
     .firstline {
         position: fixed;
@@ -360,3 +375,5 @@
         }
     }
 }
+
+
