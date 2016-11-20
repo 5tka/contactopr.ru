@@ -90,13 +90,17 @@ $('.fancybox').fancybox({'width':1100, afterClose: function() {animation=false;}
 		});
         $('.gallery__wrapper-item div').on('click',function(){
             $('.services__popup').bPopup({
-                closeClass: 'none',
+				transition: 'slideBack',
+				transitionClose: 'slideIn'
+
             });
             return false;
         });
 				$('.menu-list__a--briff').on('click',function(){
             $('#brif_block').bPopup({
                 closeClass: 'close__brif_block',
+                transition: 'slideBack',
+				transitionClose: 'slideIn'
             });
             return false;
         });
@@ -130,14 +134,15 @@ $('.fancybox').fancybox({'width':1100, afterClose: function() {animation=false;}
 		return this.each(createTabs);
 	};
 })(jQuery);
-// POPUP
+
+// POPUP 
 $('.uslugi__item').on('click', function(event) {
   event.preventDefault();
   $('.uslugi-popup__wrap').bPopup({
+	transition: 'slideBack',
+	transitionClose: 'slideIn'
   });
 });
-
-
 
 
 // ПАРАЛАКС
@@ -355,7 +360,7 @@ function set_slide_events()
         if (slidenum>0)
         {
             pos=0;
-            $('.sliders').each(function(i) {if ((i+1)<slidenum) {pos+=$(this).height();}});
+            $('.sliders').each(function(i) {if ((i+1)<slidenum) {pos+=$(this).outerHeight();}});
             $("#site_body").mCustomScrollbar("scrollTo", pos, {scrollInertia:1000});
         }
         // else {$.fancybox({href: '/blocks/brif.php', type: 'ajax'});}
