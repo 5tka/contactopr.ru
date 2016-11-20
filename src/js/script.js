@@ -27,18 +27,22 @@ $(document).ready(function(){
 		// }
 	});
 
-	  $('.header-slider .bxslider, .bxslider-about').bxSlider({
-			pager: false,
-			 adaptiveHeight: true,
-		});
-
+	$('.header-slider .bxslider' ).bxSlider({
+		pager: false,
+		adaptiveHeight: true
+	});
+	$('.faces-slider' ).bxSlider({
+		pager: false,
+		touchEnabled: false
+	});
+    $('.bxslider-about').bxSlider({
+        pager: false,
+        adaptiveHeight: true
+    });
 	  $('.header-slider').css({
         visibility: "visible",
         opacity: "1"
    	 });
-
-
-
 
 	$('.letters-wrap').slick({
 		lazyLoad: 'ondemand',
@@ -316,8 +320,8 @@ function set_slide_start_position()
         sliders_top.push($('#header').height()+center_height);
         center_height+=$(this).outerHeight();
     });
-    console.log(sliders_top); /// дебаг
-    console.log(center_height); /// дебаг
+    // console.log(sliders_top); /// дебаг
+    // console.log(center_height); /// дебаг
 
     real_height=center_height;
     // center_height+=300;
