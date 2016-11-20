@@ -16,52 +16,59 @@ $(document).ready(function(){
 		// }
 	});
 
-	  $('.header-slider .bxslider, .bxslider-about').bxSlider({
-			pager: false,
-			 adaptiveHeight: true,
-		});
-
+	$('.header-slider .bxslider' ).bxSlider({
+		pager: false,
+		adaptiveHeight: true
+	});
+	$('.bxslider-about').bxSlider({
+		pager: false,
+		adaptiveHeight: true
+	});
+	$('.faces-slider' ).bxSlider({	
+		pager: false,
+		touchEnabled: false
+	});
 	  $('.header-slider').css({
         visibility: "visible",
         opacity: "1"
    	 });
 	  // анимация
-		$.fn.extend({
-		    animateCss: function (animationName) {
-		        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-		        this.addClass('animated ' + animationName).one(animationEnd, function() {
-		            $(this).removeClass('animated ' + animationName);
-		        });
-		    }
-		});
+		// $.fn.extend({
+		//     animateCss: function (animationName) {
+		//         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+		//         this.addClass('animated ' + animationName).one(animationEnd, function() {
+		//             $(this).removeClass('animated ' + animationName);
+		//         });
+		//     }
+		// });
 
-		var contactoSymbolsBlock = document.querySelector('.about-faces__list'),
-			initiated = false,
-		  	parentList=$('.about-faces__list');
+		// var contactoSymbolsBlock = document.querySelector('.about-faces__list'),
+		// 	initiated = false,
+		//   	parentList=$('.about-faces__list');
 
-		  	parentList.css('display','none');
-		function checkContactoAnimation(){
-	  // 	var top = contactoSymbolsBlock.getBoundingClientRect().top;
-	  // 	if (Math.abs(top)<=document.documentElement.clientHeight - 200) {
-  	// 		if (initiated==true) { // если уже инициализирован тогда возвражаемось
-  	// 			return;
-  	// 		}
-  	// 		initiated=true;
-  	// 		// подключаем метод animateCss в jQuery
-			// var i=0;
-	  // 		$('.about__wrap .about[aria-hidden="false"] .about-faces__item').each(function (indx, element){
-	  // 			// console.log($(this));
-	  // 			$(this).animateCss('bounceInRight');
-	  // 		})
-	  // 		parentList.removeAttr('style');
-	  // 	}
-	  // 	if (Math.abs(top)>document.documentElement.clientHeight-200 && initiated) {
-	  // 		initiated=false;
-	  // 		parentList.css('display','none');
-	  // 	}
-	  }
-	  checkContactoAnimation();
-	  $(window).on('scroll', checkContactoAnimation )
+		//   	parentList.css('display','none');
+		// function checkContactoAnimation(){
+	 //  	var top = contactoSymbolsBlock.getBoundingClientRect().top;
+	 //  	if (Math.abs(top)<=document.documentElement.clientHeight - 200) {
+  // 			if (initiated==true) { // если уже инициализирован тогда возвражаемось
+  // 				return;
+  // 			}
+  // 			initiated=true;
+  // 			// подключаем метод animateCss в jQuery
+		// 	var i=0;
+	 //  		$('.about__wrap .about[aria-hidden="false"] .about-faces__item').each(function (indx, element){
+	 //  			// console.log($(this));
+	 //  			$(this).animateCss('bounceInRight');
+	 //  		})
+	 //  		parentList.removeAttr('style');
+	 //  	}
+	 //  	if (Math.abs(top)>document.documentElement.clientHeight-200 && initiated) {
+	 //  		initiated=false;
+	 //  		parentList.css('display','none');
+	 //  	}
+	 //  }
+	 //  checkContactoAnimation();
+	 //  $(window).on('scroll', checkContactoAnimation )
 
 
 

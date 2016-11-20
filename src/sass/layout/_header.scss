@@ -281,7 +281,7 @@
         }
     }
     .socials_block{
-        // margin-left: 0;
+        // display: block;
     }
 }
 
@@ -338,6 +338,7 @@
 
 }
 @media only screen and (max-width: 450px) {
+    
     .landing-menu{
         right: 2%;
     }

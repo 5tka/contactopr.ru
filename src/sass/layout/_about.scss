@@ -45,9 +45,6 @@ body, html{
 	.bx-wrapper{
 		margin-bottom: 0;
 	}
-	.bx-viewport{
-		height: auto !important;
-	}
 }
 .about{
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#568900+0,84bb14+50,568900+100 */
@@ -58,7 +55,7 @@ body, html{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#568900', endColorstr='#568900',GradientType=0 ); /* IE6-9 */
 	padding: 55px 0 140px 0;
 	color: #fff;
-	min-height: 680px;
+	// min-height: 680px;
 }
 .about__title{
 	@include font-size(40px);
@@ -82,6 +79,7 @@ body, html{
 	&__list{
 		position: relative;
 		height: 200px;
+		margin-bottom: 20px;
 	}
 	&__item{
 		width: 200px;
@@ -250,6 +248,15 @@ body, html{
 		@include font-size(17px);
 	}
 }
+.faces-slider{
+	display: none;
+}
+.about-faces__wrap .bx-next{
+	display: none;	
+}
+.about-faces__wrap .bx-prev{
+	display: none;		
+}
 // ------------------------------------MEDIA---------------------------------
 @include breakpoint(1300){
 	.about__title{
@@ -262,6 +269,9 @@ body, html{
 	}
 }
 @include breakpoint(1050){
+	.about{
+		min-height:auto;
+	}
 	.about-faces__detail{
 		display: none;
 	}
@@ -318,6 +328,9 @@ body, html{
 			}
 		}
 	}
+	.about-faces__item{
+		width: 12%;
+	}
 }
 @include breakpoint(940){
 	.about{
@@ -327,9 +340,7 @@ body, html{
 		padding: 0 25px;
 	}
 	.about-faces__item{
-		width: 180px;
-		&:after{
-		}
+		width: 10%;
 	}
 }
 @include breakpoint(854){
@@ -343,14 +354,17 @@ body, html{
 		margin-bottom: 20px;
 	}
 	.about-faces__item{
-		width: 145px;
+		width: 10%;
 		&:after{
 		}
 	}
 }
 @include breakpoint(705){
+	.about{
+		min-height:auto;
+	}
 	.about-faces__item{
-		width: 120px;
+		width: 10%;
 		&:after{
 		}
 	}
@@ -360,10 +374,35 @@ body, html{
 		margin-bottom: 10px;
 	}
 }
-@include breakpoint(597){
-	.about-faces__item{
-		width: 40%;
-		&:after{
+// Media для слайдера в слайдере (только лица)
+@include breakpoint(705){
+	.about{
+		min-height:auto;
+	}
+	.about-faces__wrap .bx-prev{
+		display: block;
+		width: 30px !important;
+		height: 30px !important;
+		left: 10% !important;
+	}
+	.about-faces__wrap .bx-next{
+		display: block;
+		width: 30px !important;
+		height: 30px !important;
+		right: 10% !important;
+	}
+	.faces-slider{
+		display: block;
+		.faces-slider__item{
+			img{
+				border-radius: 50%; 
+				max-width: 50%;
+				height: auto;
+				margin: 0 auto;
+			}
+		}
+		.faces-slider__caption{
+			text-align: center;
 		}
 	}
 }
