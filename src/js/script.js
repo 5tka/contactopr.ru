@@ -114,7 +114,13 @@ $('.fancybox').fancybox({'width':1100, afterClose: function() {animation=false;}
                 closeClass: 'none',
             });
             return false;
-        })
+        });
+				$('.menu-list__a--briff').on('click',function(){
+            $('#brif_block').bPopup({
+                closeClass: 'close__brif_block',
+            });
+            return false;
+        });
 });
 
 (function($){
