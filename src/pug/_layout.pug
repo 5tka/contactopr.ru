@@ -6,10 +6,10 @@ html(lang="ru-RU")
 		include ./_includes/_head/_head.pug
 	body
 		.wrapper
-			.maincontent
+			.maincontent#site_body
 				block header
 					include ./_includes/_layout/_header.pug
-				main
+				main#center
 					block main
 						include ./_includes/_layout/_main.pug
 			block footer
