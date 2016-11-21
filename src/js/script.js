@@ -73,7 +73,7 @@ $(document).ready(function(){
 	  ]
 	});
 
-$('.fancybox').fancybox({'width':1100, afterClose: function() {animation=false;}});
+        $('.fancybox').fancybox({'width':1100, afterClose: function() {animation=false;}});
 	// $(".tabs").lightTabs();
 
 		$('.brands-wrapper').slick({
@@ -88,7 +88,7 @@ $('.fancybox').fancybox({'width':1100, afterClose: function() {animation=false;}
 			// centerMode: true,
 			variableWidth: true
 		});
-        
+
         $('.gallery__wrapper-item div').on('click',function(){
             $('.services__popup').bPopup({
 				transition: 'slideBack',
@@ -125,7 +125,7 @@ $('.fancybox').fancybox({'width':1100, afterClose: function() {animation=false;}
                 data_cl = $(this).data("clients");
                 $('.gallery__wrapper-item div').css("display","none");
                 $('.gallery__wrapper-item div[data-clients='+data_cl+']').removeAttr("style");
-                // $("#site_body").mCustomScrollbar("scrollTo", pos, {scrollInertia:1000});
+                $("#site_body").mCustomScrollbar("scrollTo", slidersNav["projects"], {scrollInertia:1000});
                 $('.gallery__list').slick('slickGoTo',0);
             });
 
@@ -330,7 +330,6 @@ function start_once()
 
 function set_slide_start_position()
 {
-
     full_screen_height=$('#site_body').height()-$('#header').height();
     $('.sliders.fullscreen').height(full_screen_height);
     $('.sliders').css('top', $('#site_body').height());  /// баг з відступом 2 блоку
@@ -344,7 +343,8 @@ function set_slide_start_position()
     var center_height=0;
     $('.sliders').each(function()
     {
-        // slidersNav[$(this).getElementById]
+
+        slidersNav[$(this).attr('id')]=$('#header').height()+center_height;
 
     	if (!$(this).hasClass('fullscreen')) {
 	    	$(this).css({
@@ -354,6 +354,7 @@ function set_slide_start_position()
         sliders_top.push($('#header').height()+center_height);
         center_height+=$(this).outerHeight();
     });
+    // console.log(slidersNav); /// дебаг
     // console.log(sliders_top); /// дебаг
     // console.log(center_height); /// дебаг
 
@@ -363,7 +364,7 @@ function set_slide_start_position()
     $("#site_body").mCustomScrollbar({
         theme:"invisible",
         scrollEasing: "linear",
-        mouseWheel:{ scrollAmount: 300 },
+        mouseWheel:{ scrollAmount: 125 },
         advanced:{updateOnBrowserResize: true,
             updateOnContentResize: true},
         callbacks:{whileScrolling: function()   {
@@ -385,21 +386,23 @@ function set_slide_events()
 {
     // старий сопсіб позицій
     //
-    $('#menu a[rel]').click(function()
-    {
-        slidenum=$(this).attr("rel");
-        if (slidenum>0)
-        {
-            pos=0;
-            $('.sliders').each(function(i) {if ((i+1)<slidenum) {pos+=$(this).outerHeight();}});
-            $("#site_body").mCustomScrollbar("scrollTo", pos, {scrollInertia:1000});
-        }
-        // else {$.fancybox({href: '/blocks/brif.php', type: 'ajax'});}
+    // $('#menu a[rel]').click(function()
+    // {
+    //     slidenum=$(this).attr("rel");
+    //     if (slidenum>0)
+    //     {
+    //         pos=0;
+    //         $('.sliders').each(function(i) {if ((i+1)<slidenum) {pos+=$(this).outerHeight();}});
+    //         $("#site_body").mCustomScrollbar("scrollTo", pos, {scrollInertia:1000});
+    //     }
+    //     // else {$.fancybox({href: '/blocks/brif.php', type: 'ajax'});}
+    // });
+
+    $('#menu a[href*="#"]').click(function(){
+        var id=$(this).attr('href').slice(1);
+        var position = slidersNav[id];
+        $("#site_body").mCustomScrollbar("scrollTo", position, {scrollInertia:1000});
     });
-
-    // $('#menu a[data-target]').click(function(){
-
-    // }
 
     // $('#history').click(function(e)
     // {
