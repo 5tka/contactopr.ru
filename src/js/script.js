@@ -74,7 +74,7 @@ $(document).ready(function(){
 	});
 
 $('.fancybox').fancybox({'width':1100, afterClose: function() {animation=false;}});
-	$(".tabs").lightTabs();
+	// $(".tabs").lightTabs();
 
 		$('.brands-wrapper').slick({
 			infinite: true,
@@ -82,12 +82,13 @@ $('.fancybox').fancybox({'width':1100, afterClose: function() {animation=false;}
 			autoplaySpeed: 2500
 		});
 		$('.gallery__list').slick({
-			infinite: true,
+			infinite: false,
 			speed: 300,
 			slidesToShow: 1,
-			centerMode: true,
+			// centerMode: true,
 			variableWidth: true
 		});
+        
         $('.gallery__wrapper-item div').on('click',function(){
             $('.services__popup').bPopup({
 				transition: 'slideBack',
@@ -96,7 +97,7 @@ $('.fancybox').fancybox({'width':1100, afterClose: function() {animation=false;}
             });
             return false;
         });
-				$('.menu-list__a--briff').on('click',function(){
+        $('.menu-list__a--briff').on('click',function(){
             $('#brif_block').bPopup({
                 closeClass: 'close__brif_block',
                 transition: 'slideBack',
@@ -104,6 +105,30 @@ $('.fancybox').fancybox({'width':1100, afterClose: function() {animation=false;}
             });
             return false;
         });
+
+
+        var li = $('.tabs__gallery-item'),
+            img = $('.gallery__wrapper-item div');
+            brands = $('.brands-item')
+
+            li.click(function(){
+                if($(this).data("category") == "all"){
+                    $('.gallery__wrapper-item div').removeAttr("style");
+                }else{
+                    data_cat = $(this).data("category");
+                    $('.gallery__wrapper-item div').css("display","none");
+                    $('.gallery__wrapper-item div[data-category='+data_cat+']').removeAttr("style");
+                }
+                $('.gallery__list').slick('slickGoTo',0);
+            });
+            brands.click(function(){
+                data_cl = $(this).data("clients");
+                $('.gallery__wrapper-item div').css("display","none");
+                $('.gallery__wrapper-item div[data-clients='+data_cl+']').removeAttr("style");
+                // $("#site_body").mCustomScrollbar("scrollTo", pos, {scrollInertia:1000});
+                $('.gallery__list').slick('slickGoTo',0);
+            });
+
 });
 
 (function($){

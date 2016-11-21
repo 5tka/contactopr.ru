@@ -2,47 +2,115 @@ section.services.sliders.fixed_slide#projects
     .services__wrapper
         .tabs
             ul.tabs__gallery-list
-                li.tabs__gallery-item.tabs__gallery-item--active all projects
-                li.tabs__gallery-item pr
-                li.tabs__gallery-item design
-                li.tabs__gallery-item btl
-                li.tabs__gallery-item creative
-                li.tabs__gallery-item events
-                li.tabs__gallery-item production
+                li.tabs__gallery-item.tabs__gallery-item--active(data-category="all") all projects
+                li.tabs__gallery-item(data-category="pr") pr
+                li.tabs__gallery-item(data-category="design") design
+                li.tabs__gallery-item(data-category="btl") btl
+                li.tabs__gallery-item(data-category="creative") creative
+                li.tabs__gallery-item(data-category="events") events
+                li.tabs__gallery-item(data-category="production") production
 
             .gallery__wrapper
                  .gallery__list
                     .gallery__wrapper-item
-                        .img-big
+                        .img-big(data-category="pr")(data-clients="heinken")
                             img(src="img/g_1.jpg", alt="")
                             span.dscr
                                 | Проект волшебный
-                        .img-sm
+                        .img-sm(data-category="pr")
                             img(src="img/g_2.jpg", alt="")
                             span.dscr
                                 | Проект волшебный
-                        .img-sm
+                        .img-sm(data-category="design")
                             img(src="img/g_2.jpg", alt="")
                             span.dscr
                                 | Проект волшебный
-                        .img-big
+                        .img-big(data-category="btl")
                             img(src="img/g_1.jpg", alt="")
                             span.dscr
                                 | Проект волшебный
                     .gallery__wrapper-item
-                        .img-big
+                        .img-big(data-category="production")
                             img(src="img/g_1.jpg", alt="")
                             span.dscr
                                 | Проект волшебный
-                        .img-sm
+                        .img-sm(data-category="events")(data-clients="gasprom")
                             img(src="img/g_2.jpg", alt="")
                             span.dscr
                                 | Проект волшебный
-                        .img-sm
+                        .img-sm(data-category="events")
                             img(src="img/g_2.jpg", alt="")
                             span.dscr
                                 | Проект волшебный
-                        .img-big
+                        .img-big(data-category="creative")
+                            img(src="img/g_1.jpg", alt="")
+                            span.dscr
+                                | Проект волшебный
+                    .gallery__wrapper-item
+                        .img-big(data-category="production")
+                            img(src="img/g_1.jpg", alt="")
+                            span.dscr
+                                | Проект волшебный
+                        .img-sm(data-category="events")(data-clients="gasprom")
+                            img(src="img/g_2.jpg", alt="")
+                            span.dscr
+                                | Проект волшебный
+                        .img-sm(data-category="events")
+                            img(src="img/g_2.jpg", alt="")
+                            span.dscr
+                                | Проект волшебный
+                        .img-big(data-category="creative")
+                            img(src="img/g_1.jpg", alt="")
+                            span.dscr
+                                | Проект волшебный
+                    .gallery__wrapper-item
+                        .img-big(data-category="production")
+                            img(src="img/g_1.jpg", alt="")
+                            span.dscr
+                                | Проект волшебный
+                        .img-sm(data-category="events")(data-clients="gasprom")
+                            img(src="img/g_2.jpg", alt="")
+                            span.dscr
+                                | Проект волшебный
+                        .img-sm(data-category="events")
+                            img(src="img/g_2.jpg", alt="")
+                            span.dscr
+                                | Проект волшебный
+                        .img-big(data-category="creative")
+                            img(src="img/g_1.jpg", alt="")
+                            span.dscr
+                                | Проект волшебный
+                    .gallery__wrapper-item
+                        .img-big(data-category="production")
+                            img(src="img/g_1.jpg", alt="")
+                            span.dscr
+                                | Проект волшебный
+                        .img-sm(data-category="events")(data-clients="gasprom")
+                            img(src="img/g_2.jpg", alt="")
+                            span.dscr
+                                | Проект волшебный
+                        .img-sm(data-category="events")
+                            img(src="img/g_2.jpg", alt="")
+                            span.dscr
+                                | Проект волшебный
+                        .img-big(data-category="creative")
+                            img(src="img/g_1.jpg", alt="")
+                            span.dscr
+                                | Проект волшебный
+                    .gallery__wrapper-item
+                        .img-big(data-category="production")
+                            img(src="img/g_1.jpg", alt="")
+                            span.dscr
+                                | Проект волшебный
+                        .img-sm(data-category="events")(data-clients="gasprom")
+                            img(src="img/g_2.jpg", alt="")
+                            span.dscr
+                                | Проект волшебный
+                        .img-sm(data-category="events")
+                            img(src="img/g_2.jpg", alt="")
+                            span.dscr
+                                | Проект волшебный
+                        .img-big(data-category="creative")
                             img(src="img/g_1.jpg", alt="")
                             span.dscr
                                 | Проект волшебный
@@ -99,15 +167,20 @@ section.services.sliders.fixed_slide#projects
         .services__footer
             .services__img-wrap
                 .img-item
-                    img(src="img/s_popup_f_1.jpg", alt="")
+                    a(href='img/s_popup_f_1.jpg', data-lightbox='services-popup')
+                        img(src="img/s_popup_f_1.jpg", alt="")
                 .img-item
-                    img(src="img/s_popup_f_2.jpg", alt="")
+                    a(href='img/s_popup_f_2.jpg', data-lightbox='services-popup')                
+                        img(src="img/s_popup_f_2.jpg", alt="")
                 .img-item
-                    img(src="img/s_popup_f_3.jpg", alt="")
+                    a(href='img/s_popup_f_3.jpg', data-lightbox='services-popup')            
+                        img(src="img/s_popup_f_3.jpg", alt="")
                 .img-item
-                    img(src="img/s_popup_f_4.jpg", alt="")
+                    a(href='img/s_popup_f_4.jpg', data-lightbox='services-popup')                
+                        img(src="img/s_popup_f_4.jpg", alt="")
                 .img-item
-                    img(src="img/s_popup_f_4.jpg", alt="")
+                    a(href='img/s_popup_f_4.jpg', data-lightbox='services-popup')                
+                        img(src="img/s_popup_f_4.jpg", alt="")
                 .img-item
                     .video-container
                         iframe(src='https://www.youtube.com/embed/XGSy3_Czz8k')
