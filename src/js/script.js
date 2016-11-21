@@ -151,6 +151,7 @@ var touch_screen=false;
 var animation = false;
 var body_scroll_top = 0;
 var sliders_top = new Array();
+var slidersNav = new Object();
 var scroll_vector_direct=true;
 var real_height=0;
 
@@ -304,6 +305,7 @@ function start_once()
 
 function set_slide_start_position()
 {
+
     full_screen_height=$('#site_body').height()-$('#header').height();
     $('.sliders.fullscreen').height(full_screen_height);
     $('.sliders').css('top', $('#site_body').height());  /// баг з відступом 2 блоку
@@ -317,6 +319,8 @@ function set_slide_start_position()
     var center_height=0;
     $('.sliders').each(function()
     {
+        // slidersNav[$(this).getElementById]
+
     	if (!$(this).hasClass('fullscreen')) {
 	    	$(this).css({
 	    		height: $(this).outerHeight()
@@ -354,6 +358,8 @@ function set_slide_start_position()
 
 function set_slide_events()
 {
+    // старий сопсіб позицій
+    //
     $('#menu a[rel]').click(function()
     {
         slidenum=$(this).attr("rel");
@@ -365,6 +371,10 @@ function set_slide_events()
         }
         // else {$.fancybox({href: '/blocks/brif.php', type: 'ajax'});}
     });
+
+    // $('#menu a[data-target]').click(function(){
+
+    // }
 
     // $('#history').click(function(e)
     // {
