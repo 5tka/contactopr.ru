@@ -231,8 +231,8 @@
 
 /* Пользовательские настройки плагинов*/
 .header-slider {
-        visibility: hidden;
-        opacity: 0;
+        // visibility: hidden;
+        // opacity: 0;
         transition: 2s;
     .bx-wrapper .bx-prev {
       background: url('../img/bxslider/left_arrow.png') no-repeat;
@@ -353,7 +353,7 @@
 
 }
 @media only screen and (max-width: 450px) {
-    
+
     .landing-menu{
         right: 2%;
     }

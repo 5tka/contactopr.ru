@@ -91,6 +91,7 @@
 @include breakpoint(550) {
     #brif_block {
         width: 100%;
+        margin-top: 0;
         left: 0!important;
         margin-left: 0!important;
     }
