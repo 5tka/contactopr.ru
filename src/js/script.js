@@ -31,9 +31,12 @@ $(document).ready(function(){
 		pager: false,
 		adaptiveHeight: true
 	});
-	$('.faces-slider' ).bxSlider({
+	faces = $('.faces-slider' ).bxSlider({
 		pager: false,
-		touchEnabled: false
+		touchEnabled: false,
+        mode: 'fade'
+        // useCSS: false
+        // autoControls: true
 	});
     $('.bxslider-about').bxSlider({
         pager: false,
