@@ -135,7 +135,7 @@ $('.fancybox').fancybox({'width':1100, afterClose: function() {animation=false;}
 	};
 })(jQuery);
 
-// POPUP 
+// POPUP
 $('.uslugi__item').on('click', function(event) {
   event.preventDefault();
   $('.uslugi-popup__wrap').bPopup({
@@ -354,7 +354,7 @@ function set_slide_start_position()
 
 function set_slide_events()
 {
-    $('#menu a').click(function()
+    $('#menu a[rel]').click(function()
     {
         slidenum=$(this).attr("rel");
         if (slidenum>0)

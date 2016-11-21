@@ -1,9 +1,9 @@
 #brif_block {
     margin-top: 60px;
     width: 700px;
-    height: 550px;
+    // height: 550px;
     display: none;
-    overflow-y: overlay;
+    // overflow-y: overlay;
     padding: 20px 50px;
     background: #f9f9f9;
     /*font-family: "Century Gothic";*/
@@ -90,16 +90,18 @@
 }
 @include breakpoint(550) {
     #brif_block {
-        width: 450px;
+        width: 100%;
+        left: 0!important;
+        margin-left: 0!important;
     }
 }
-@include breakpoint(475) {
-    #brif_block {
-        width: 350px;
-    }
-}
-@include breakpoint(380) {
-    #brif_block {
-        width: 300px;
-    }
-}
+// @include breakpoint(475) {
+//     #brif_block {
+//         width: 350px;
+//     }
+// }
+// @include breakpoint(380) {
+//     #brif_block {
+//         width: 300px;
+//     }
+// }
