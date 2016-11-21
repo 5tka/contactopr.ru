@@ -110,7 +110,7 @@ $(document).ready(function(){
         var li = $('.tabs__gallery-item'),
             img = $('.gallery__wrapper-item div');
             brands = $('.brands-item')
-            
+
         var links = $('.tabs__gallery-item') // клас стиля ссылки
                 links.click( function(){
                 links.removeClass('tabs__gallery-item--active')   // клас активной ссылки
@@ -131,8 +131,8 @@ $(document).ready(function(){
                 $('.gallery__wrapper-item div').css("display","none");
                 $('.gallery__wrapper-item div[data-clients='+data_cl+']').removeAttr("style");
                 if (isMobile) {
-                    top = $('#projects').offset().top;
-                    $('body,html').animate({scrollTop: top}, 1000);
+                    pos = $('#projects').offset().top;
+                    $('body,html').animate({scrollTop: pos}, 1000);
                 } else {
                     $("#site_body").mCustomScrollbar("scrollTo", slidersNav["projects"], {scrollInertia:1000});
                 }
