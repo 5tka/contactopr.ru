@@ -156,10 +156,10 @@ var real_height=0;
 
 $(function()
 {
-    var zIndex = 10;
+    var zIndex = 1;
     $('.sliders').each(function(i, val) {
         $(this).css('z-index', zIndex); // увеличиваем z-index следующего слайда при паралаксе
-        zIndex+=10;
+        zIndex+=1;
     });
     $('.firstline').css('z-index', zIndex);
 
@@ -334,7 +334,7 @@ function set_slide_start_position()
     $("#site_body").mCustomScrollbar({
         theme:"invisible",
         scrollEasing: "linear",
-        mouseWheel:{ scrollAmount: 125 },
+        mouseWheel:{ scrollAmount: 300 },
         advanced:{updateOnBrowserResize: true,
             updateOnContentResize: true},
         callbacks:{whileScrolling: function()   {
