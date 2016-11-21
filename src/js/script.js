@@ -110,7 +110,12 @@ $('.fancybox').fancybox({'width':1100, afterClose: function() {animation=false;}
         var li = $('.tabs__gallery-item'),
             img = $('.gallery__wrapper-item div');
             brands = $('.brands-item')
-
+            
+        var links = $('.tabs__gallery-item') // клас стиля ссылки
+                links.click( function(){
+                links.removeClass('tabs__gallery-item--active')   // клас активной ссылки
+                $(this).addClass('tabs__gallery-item--active')
+            })
             li.click(function(){
                 if($(this).data("category") == "all"){
                     $('.gallery__wrapper-item div').removeAttr("style");
