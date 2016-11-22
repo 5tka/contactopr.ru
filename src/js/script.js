@@ -200,25 +200,6 @@ if (isMobile) {
     $('.sliders').addClass('paralax_init');
 }
 
-$(function()
-{
-    var zIndex = 1;
-    $('.sliders').each(function(i, val) {
-        $(this).css('z-index', zIndex); // увеличиваем z-index следующего слайда при паралаксе
-        zIndex+=1;
-    });
-    $('.firstline').css('z-index', zIndex);
-
-    if (!isMobile) {
-
-        $(window).resize(function () {all_resize()});
-        all_resize();
-        start_once();
-        checkContactoAnimation();
-    }
-
-});
-
 // ****** АНИМАЦИЯ *********
 $.fn.extend({
     animateCss: function (animationName) {
@@ -235,10 +216,15 @@ var contactoSymbolsBlock = document.querySelector('.about-faces__list'),
 
     parentList.css('visibility','hidden');
 function checkContactoAnimation(){
-    var top = contactoSymbolsBlock.getBoundingClientRect().top,
+    var top = contactoSymbolsBlock.getBoundingClientRect().top;
+    var containerTop;
+    if (!isMobile) { // анамация при включенном паралаксе
         containerTop=document.getElementById('mCSB_1_container').getBoundingClientRect().top;
+        containerTop=Math.abs(containerTop);
+    } else { // при отключенном
+        containerTop=document.documentElement.clientHeight;
+    }
     top=Math.abs(top);
-    containerTop=Math.abs(containerTop);
     if (top<=containerTop - 200) {
         // alert(1);
 
@@ -259,6 +245,28 @@ function checkContactoAnimation(){
         parentList.css('visibility','hidden');
     }
 }
+$(function()
+{
+    var zIndex = 1;
+    $('.sliders').each(function(i, val) {
+        $(this).css('z-index', zIndex); // увеличиваем z-index следующего слайда при паралаксе
+        zIndex+=1;
+    });
+    $('.firstline').css('z-index', zIndex);
+
+    if (!isMobile) {
+
+        $(window).resize(function () {all_resize()});
+        all_resize();
+        start_once();
+        checkContactoAnimation();
+    } else {
+        checkContactoAnimation();
+        $(window).on('scroll', checkContactoAnimation );
+        alert(1);
+    }
+
+});
 
 
 function all_resize() {$('#site_body').height($(document).height());}
