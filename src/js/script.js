@@ -3,10 +3,11 @@ $(window).on('load', function () {
     $preloader.delay(350).fadeOut('slow');
 });
 $(document).ready(function(){
-    $(".hamburger").click(function(){
-        $(this).toggleClass("is-active");
+    function adaptiveMenu(){
+        $("#hamburger").toggleClass("is-active");
         $("#menu").toggleClass("db");
-    });
+    };
+    $(".hamburger").on('click', adaptiveMenu);
     $(window).resize(function() {
         var t = $(window).width();
         if (t >= 1070 && ($(".hamburger").hasClass("is-active"))) {

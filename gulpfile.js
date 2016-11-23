@@ -76,7 +76,7 @@ gulp.task('uncss', function() {
 //Сжатие изображений
 gulp.task('img', function() {
   return gulp.src('src/img/**/**/**')
-    //.pipe(imagemin({ optimizationLevel: 3, progressive: true}))
+    // .pipe(imagemin({ optimizationLevel: 3, progressive: true}))
     .pipe(gulp.dest('build/img/'));
 });
 
