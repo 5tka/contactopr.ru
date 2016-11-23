@@ -1,3 +1,7 @@
+$(window).on('load', function () {
+    var $preloader = $('#preloader-wrap');
+    $preloader.delay(350).fadeOut('slow');
+});
 $(document).ready(function(){
     $(".hamburger").click(function(){
         $(this).toggleClass("is-active");
@@ -266,7 +270,7 @@ $(function()
     } else {
         checkContactoAnimation();
         $(window).on('scroll', checkContactoAnimation );
-        alert(1);
+        // alert(1);
     }
 
 });

@@ -15,7 +15,33 @@ $jeet: (
   layout-direction: LTR,
   parent-first: false
 );*/
-
+// Preloader
+::-webkit-scrollbar{
+    width:0px;
+}
+#preloader-wrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 100500;
+    // overflow: hidden;
+}
+.preloader{
+    background: url(../img/site_preloader.gif)no-repeat;
+    background-position: center center;
+    background-size:contain;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    position: absolute;
+    top: 50%; left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
