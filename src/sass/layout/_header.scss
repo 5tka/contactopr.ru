@@ -1,5 +1,5 @@
 // paralax styles
-#center .sliders {
+#center .sliders.paralax_init {
     width: 100%;
     background-repeat: no-repeat;
     background-position: top center;
@@ -12,6 +12,10 @@
     left: 0px;
     top: 0px;
 }
+#mCSB_1_scrollbar_vertical {
+    display: none;
+}
+
 
 .header {
     .firstline {
