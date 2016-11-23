@@ -259,7 +259,7 @@ $(function()
         $(this).css('z-index', zIndex); // увеличиваем z-index следующего слайда при паралаксе
         zIndex+=1;
     });
-    $('.firstline').css('z-index', zIndex);
+    // $('.firstline').css('z-index', zIndex);
 
     if (!isMobile) {
 
