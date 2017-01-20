@@ -112,6 +112,7 @@ $(document).ready(function(){
                 transitionClose: 'slideIn'
             });
             return false;
+
         });
 
 
