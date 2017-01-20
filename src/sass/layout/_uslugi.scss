@@ -1,5 +1,5 @@
 .uslugi{
-	padding: 122px 0 59px 0;
+	padding: 85px 0 22px 0;
 }
 .uslugi__wrap{
 	max-width: 1000px;
@@ -251,7 +251,7 @@
 				display: block;
 				margin:0;
 				padding:0;
-				font-size:0; 
+				font-size:0;
 				img{
 					width: 100%;
 					height: auto;
@@ -281,13 +281,13 @@
     border-color: #61a327;
 }
 .b-modal{
-	z-index: 8998 !important;	
+	z-index: 8998 !important;
 }
 .uslugi-popup__wrap{
 	z-index: 8999 !important;
 }
 .lightboxOverlay{
-	z-index: 9000 !important;	
+	z-index: 9000 !important;
 }
 .lightbox{
 	z-index: 9001 !important;
@@ -315,7 +315,7 @@
 	.uslugi-popup__wrap{
 		// max-width: 768px!important;
 		margin-left: 0;
-		left: 0!important;	
+		left: 0!important;
 	}
 }
 @include breakpoint(624){
