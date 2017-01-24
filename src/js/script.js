@@ -20,7 +20,6 @@ function checkParalaxScroll(){
 }
 $(document).ready(function(){
 
-
     $(".arrow-up").css('display', 'none');
 
     $(".arrow-up").click(function(){
@@ -126,13 +125,14 @@ $(document).ready(function(){
             speed: 300,
             slidesToShow: 1,
             // centerMode: true,
-            variableWidth: true
+            variableWidth: true,
         });
 
         $('.gallery__wrapper-item div').on('click',function(){
             $('.services__popup').bPopup({
                 transition: 'slideBack',
-                transitionClose: 'slideIn'
+                transitionClose: 'slideIn',
+                zIndex: 25
 
             });
             return false;
@@ -223,6 +223,7 @@ $('.uslugi__item').on('click', function(event) {
 
 // ПАРАЛАКС
 var isMobile = device.mobile() ? true : false ;
+isMobile = true;
 
     var touch_screen=false;
     var animation = false;
