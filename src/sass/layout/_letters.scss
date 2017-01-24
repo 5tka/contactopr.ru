@@ -350,14 +350,14 @@
             left: 0%;
             width: 100%;
             margin-top: 10px;
-            bottom: 62px;
+            bottom: 92px;
             img {
                 width: 50%;
                 min-width: 250px;
             }
         }
         #cont_note_2{
-            top: 72px;
+            top: 60px;
             padding-left: 10px;
             left: 0;
             width: 100%;
@@ -374,14 +374,20 @@
         font-size: 20px;
     }
     .letters-wrap  {
+        padding-bottom: 30px;
         .slick-slide {
+            transform: none;
+            .img-wrap {
+                padding-bottom: 0;
+            }
            &:after {
-                height: 100px;
+                // height: 100px;
+                display: none;
             }
 
         }
         .slick-slide.slick-center {
-        transform: scale(1);
+        transform: none;
         }
         .slick-prev:before {
             left: -15px;

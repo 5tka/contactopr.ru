@@ -166,7 +166,7 @@
             height: 100vh;
                 img{
                     margin: 0 auto;
-                }    
+                }
             }
     }
 }
@@ -380,7 +380,23 @@
                     font-size: 40px;
                 }
             }
+            .slide__content-wrap {
+                max-height: 200px;
+                overflow: auto;
+            }
         }
+    }
+    .header-slider .bx-wrapper {
+        .bx-prev {
+            left: 5px;
+        }
+        .bx-next {
+            right: 5px;
+        }
+    }
+    .bx-wrapper .bx-controls-direction a {
+        width: 30px;
+        height: 30px;
     }
 }
 

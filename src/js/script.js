@@ -7,7 +7,7 @@ windowHeight = document.documentElement.clientHeight;
 function checkParalaxScroll(){
         // alert(1);
         var currentScroll = isMobile ? $(window).scrollTop() : body_scroll_top ;
-        console.log(currentScroll);
+        // console.log(currentScroll);
         // arrow-up
         //
         if(currentScroll >= (windowHeight * 0.8 )){
@@ -19,8 +19,14 @@ function checkParalaxScroll(){
 
 }
 $(document).ready(function(){
-
-
+    $('a[href="#"]').click(function(event) {
+        /* Act on the event */
+        event.preventDefault();
+    });
+    $('.letters a.fancybox').click(function(event) {
+        event.preventDefault();
+        // return false;
+    });
     $(".arrow-up").css('display', 'none');
 
     $(".arrow-up").click(function(){
@@ -66,7 +72,11 @@ $(document).ready(function(){
 
 	$('.header-slider .bxslider' ).bxSlider({
 		pager: false,
-		adaptiveHeight: true
+        touchEnabled: false,
+        // auto: true,
+        autoHover: true,
+		adaptiveHeight: true,
+        onSlideAfter: AboutBlockPalaralHeightFix
 	});
 	faces = $('.faces-slider' ).bxSlider({
 		pager: false,
@@ -77,8 +87,16 @@ $(document).ready(function(){
 	});
     $('.bxslider-about').bxSlider({
         pager: false,
-        adaptiveHeight: true
+        adaptiveHeight: true,
+        onSlideAfter: AboutBlockPalaralHeightFix
     });
+function AboutBlockPalaralHeightFix() {
+    if (!isMobile) {
+        set_slide_start_position();
+        scroll_body(thismCustomScrollbar);
+    }
+}
+
       // $('.header-slider').css({
    //      visibility: "visible",
    //      opacity: "1"
@@ -88,6 +106,8 @@ $(document).ready(function(){
         lazyLoad: 'ondemand',
         // initialSlide: 1,
       centerMode: true,
+      infinite: false,
+      initialSlide: 1,
       centerPadding: '0px',
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -113,14 +133,18 @@ $(document).ready(function(){
       ]
     });
 
-        $('.fancybox').fancybox({'width':1100, afterClose: function() {animation=false;}});
-    // $(".tabs").lightTabs();
+        $('.fancybox').fancybox({
+            'width':1100,
+            afterClose: function() {animation=false;}
+        });
+        // $(".tabs").lightTabs();
 
         $('.brands-wrapper').slick({
-            infinite: true,
-            // autoplay: true,
+            infinite: false,
+            autoplay: true,
             autoplaySpeed: 2500
         });
+        $('.brands-wrapper').on('afterChange', AboutBlockPalaralHeightFix);
         $('.gallery__list').slick({
             infinite: false,
             speed: 300,
@@ -166,6 +190,7 @@ $(document).ready(function(){
                     $('.gallery__wrapper-item div[data-category='+data_cat+']').removeAttr("style");
                 }
                 $('.gallery__list').slick('slickGoTo',0);
+                AboutBlockPalaralHeightFix();
             });
             brands.click(function(){
                 data_cl = $(this).data("clients");
@@ -223,15 +248,17 @@ $('.uslugi__item').on('click', function(event) {
 
 // ПАРАЛАКС
 var isMobile = device.mobile() ? true : false ;
+isMobile = true;
 
     var touch_screen=false;
     var animation = false;
     var body_scroll_top = 0;
-    var sliders_top = new Array();
-    var slidersNav = new Object();
+    var sliders_top = [];
+    var slidersNav = {};
     var scroll_vector_direct=true;
     var real_height=0;
 if (isMobile) {
+    $('.maincontent').css('margin-top',$('#header').height());
     $('#menu a[href*="#"]').click(function(){
         var id=$(this).attr('href'),
             position = $(id).offset().top;
@@ -331,7 +358,7 @@ function all_resize() {
 
 function start_once()
 {
-    full_screen_height=$('#site_body').height()-40;
+    // full_screen_height=$('#site_body').height()-$('#header').height();
     // $.getJSON("/ajax.php", {act: 'start_once', fsh:full_screen_height}, function(j)
     // {
     //     if (j.e==0)
@@ -339,6 +366,7 @@ function start_once()
             // $('#site_body').html(j.data);
             set_slide_start_position();
             set_slide_events();
+            init_mCustomScrollbar();
             // $('body').preload(function() {$('#site_preloader').fadeOut(300, function() {$('#site_body').fadeIn(300);});});
     //     }
     //     // else {show_alert('Ошибка обращения к серверу', j.alert);}
@@ -347,17 +375,17 @@ function start_once()
 
 function scroll_body(obj) { // #sitebody
     body_scroll_top=Math.abs(obj.mcs.top);
-    // console.log(body_scroll_top+'--body_scroll_top');
-    // texth();
     // console.log(
     //  'Позиция скрола: '+body_scroll_top+
     //  '; Высота скрола:'+$('#center').height()+
     //  "; Высота экрана: "+$('#site_body').height()
     //  );
 
+    console.log('bs='+body_scroll_top);
     $('.sliders').each(function(i, val)
     {
         def=sliders_top[i]-body_scroll_top;
+        console.log(sliders_top[i]+'---'+def);
         if (def>40) {$(this).css('top', def);}
 
         // else if ($(this).hasClass('fixed_slide')) {
@@ -366,15 +394,14 @@ function scroll_body(obj) { // #sitebody
         else if ($(this).hasClass('fixed_slide')) {
             if ($(this).height()>$('#site_body').height()) { // если фикс блок больше vh ми его немного скролим а потом фиксируем
                 // если  позиция прокрутки >= (позиции следующего обьекта - vh)
-                if (body_scroll_top>=sliders_top[i+1]-$('#site_body').height()) {
-                    $(this).css('top', $('#site_body').height()-$(this).outerHeight());
+                if (body_scroll_top>=sliders_top[i+1]-$('#site_body').height()-40) {
+                    $(this).css('top', $('#site_body').height()-$(this).outerHeight()+40);
                     // ставим фикс позицию top = vh - высота блока
                 } else { // иначе обычное значение при прокрутке
                     $(this).css('top', def);
                 }
             } else { // другим блокам просто top = height(menu)
                 $(this).css('top', 40);
-
             }
         } //СТОИМ НА МЕСТЕ
 
@@ -404,47 +431,61 @@ function scroll_body(obj) { // #sitebody
 }
 
 function set_slide_start_position() {
+    sliders_top=[];
     full_screen_height=$('#site_body').height()-$('#header').height();
     $('.sliders.fullscreen').height(full_screen_height);
     $('.sliders').css('top', $('#site_body').height());  /// баг з відступом 2 блоку
     $('.sliders:first').css('top',$('#header').height());
-    $('.sliders').eq(1).css('top',$('.sliders:first').height()); // тіпа порішали верхній баг
+    $('.sliders#paralax_2').css('height', ($('#site_body').height()-$('.sliders#paralax_2').prev('.sliders').outerHeight()) );
+    console.log('hgjh'+(full_screen_height-$('.sliders#paralax_2').prev('.sliders').outerHeight()));
+    // $('.sliders').eq(1).css('top',$('.sliders:first').height()+40); // тіпа порішали верхній баг
+    //
     // sl_1_w=parseInt($(document).width()/2);
     // sl_1_h=parseInt((sl_1_w*163)/950);
     // sl_1_b=100;
     // sl_1_l=parseInt(($(document).width()-sl_1_w)/2);
     // $('#slide_1_logo').css({'width': sl_1_w, 'height': sl_1_h, 'bottom': sl_1_b, 'left': sl_1_l});
     var center_height=0;
-    $('.sliders').each(function()
-    {
-
+    $('.sliders').each(function() {
         slidersNav[$(this).attr('id')]=$('#header').height()+center_height;
 
+        var elemH=$(this).outerHeight();
         if (!$(this).hasClass('fullscreen')) {
+            if ($(this).hasClass('dynamicHeight')) {
+                // elemH=$(this).find('.about__slide[aria-hidden="false"]').eq(0).outerHeight();
+                $(this).css('height','auto');
+                elemH=$(this).outerHeight();
+            }
             $(this).css({
-                height: $(this).outerHeight()
+                height: elemH
             });
         }
         sliders_top.push($('#header').height()+center_height);
-        center_height+=$(this).outerHeight();
+        center_height+=elemH;
     });
-    // console.log(slidersNav); /// дебаг
-    // console.log(sliders_top); /// дебаг
-    // console.log(center_height); /// дебаг
-
+    console.log(slidersNav);
+    console.log('sliders_top=')
+    console.log(sliders_top);
     real_height=center_height;
     // center_height+=300;
     $('#center').height(center_height);
+}
+function init_mCustomScrollbar() {
+    // console.log(slidersNav); /// дебаг
+    // console.log(sliders_top); /// дебаг
+    // console.log(center_height); /// дебаг
+    // console.log(slidersNav);
     $("#site_body").mCustomScrollbar({
         theme:"invisible",
         scrollEasing: "linear",
         // mouseWheel:{ scrollAmount: 225 },
-        mouseWheel:{ deltaFactor: 40 },
+        mouseWheel:{ deltaFactor: 30 },
         keyboard:{ enable: true },
         advanced:{updateOnBrowserResize: true,
             updateOnContentResize: true},
         callbacks:{whileScrolling: function()   {
                                                     scroll_body(this);
+                                                    thismCustomScrollbar=this;
                                                     checkContactoAnimation();
                                                     checkParalaxScroll();
                                                 }

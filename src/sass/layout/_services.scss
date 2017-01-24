@@ -140,8 +140,8 @@
     display: none;
     .close__popup-block {
         position: absolute;
-        top: 13px;
-        right: 27px;
+        top: 9px;
+        right: 20px;
         width: 30px;
         height: 30px;
         background: url(../img/icons/close-popup.png);
@@ -169,6 +169,31 @@
         transform: translate3d(-50%, -50%, 0);
         top: 50%;
         left: 50%;
+        max-width: 80%;
+    }
+    &-navigation {
+        width: 100%;
+        @include clearfix;
+        position: absolute;
+        bottom: 10px;
+        margin-top: -19px;
+        padding: 0 15px;
+    }
+    &-prev,
+    &-next {
+        width: 39px;
+        height: 39px;
+        cursor: pointer;
+        text-indent: -9999px;
+        overflow: hidden;
+    }
+    &-next {
+        float: right;
+        background: url(../img/bxslider/right_arrow.png) center center no-repeat;
+    }
+    &-prev {
+        float: left;
+        background: url(../img/bxslider/left_arrow.png) center center no-repeat;
     }
     .s__popup-item {
         display: inline-block;
