@@ -22,9 +22,12 @@ header.header
                             li.social__item
                                 a.social__link.social__link_insta(href='https://www.instagram.com/contactopr/' target='_blank')
                 - for (var i = 0; i< menu_items.length; i++)
-                    if (menu_items[i] == "ОТПРАВИТЬ БРИФ")
+                    if (menu_items[i] == "ВАКАНСИИ")
                         li.menu-list__li
-                            a.menu-list__a.menu-list__a--briff(href=menu_items_link[i] rel=i+1) #{menu_items[i]}
+                            a.menu-list__a.vacancy-popup-init.popupLink(href=menu_items_link[i] rel=i+1 ) #{menu_items[i]}
+                    else if (menu_items[i] == "ОТПРАВИТЬ БРИФ")
+                        li.menu-list__li
+                            a.menu-list__a.briff-popup-init.popupLink(href=menu_items_link[i] rel=i+1 ) #{menu_items[i]}
                     else
                         li.menu-list__li
                             a.menu-list__a(href=menu_items_link[i] rel=i+1) #{menu_items[i]}

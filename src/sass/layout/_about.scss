@@ -260,6 +260,15 @@ body, html{
 .about-faces__wrap .bx-prev{
 	display: none;
 }
+
+.about_history ,
+.about_geography ,
+.about_principles ,
+.about_partnership {
+	.container {
+		display: none;
+	}
+}
 // ------------------------------------MEDIA---------------------------------
 @include breakpoint(1300){
 	.about__title{
@@ -409,6 +418,19 @@ body, html{
 		}
 	}
 }
+
+@include breakpoint(480){
+	.about_history ,
+	.about_geography ,
+	.about_principles ,
+	.about_partnership {
+		.container {
+			display: block;
+		}
+	}
+}
+
+
 $delay : 0;
 @for $i from 1 through 8 {
 	.about-faces__item:nth-of-type(#{$i}) {

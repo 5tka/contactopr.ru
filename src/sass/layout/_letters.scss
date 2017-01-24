@@ -350,7 +350,7 @@
             left: 0%;
             width: 100%;
             margin-top: 10px;
-            bottom: 92px;
+            bottom: 72px;
             img {
                 width: 50%;
                 min-width: 250px;
@@ -379,6 +379,9 @@
             transform: none;
             .img-wrap {
                 padding-bottom: 0;
+               &:after {
+                    display: none;
+                }
             }
            &:after {
                 // height: 100px;
