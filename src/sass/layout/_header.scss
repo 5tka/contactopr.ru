@@ -145,38 +145,27 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
+    transition: background .25s;
     width: 26px;
     height: 26px;
     display: block;
 }
 .social__link_vk {
-    background-image: url(../img/vk.png);
-    @include transition(.25s);
-    -webkit-filter: grayscale(1);
-            filter: grayscale(1);
+    background-image: url(../img/icons/vk-square.svg);
     &:hover {
-        -webkit-filter: grayscale(0);
-                filter: grayscale(0);
+        background-image: url(../img/icons/vk-square_h.svg);
     }
 }
 .social__link_fb {
-    background-image: url(../img/fb.png);
-    @include transition(.25s);
-    -webkit-filter: grayscale(1);
-            filter: grayscale(1);
+    background-image: url(../img/icons/fb-square.svg);
     &:hover {
-        -webkit-filter: grayscale(0);
-                filter: grayscale(0);
+        background-image: url(../img/icons/fb-square_h.svg);
     }
 }
 .social__link_insta {
-    background-image: url(../img/instagram.png);
-    @include transition(.25s);
-    -webkit-filter: grayscale(1);
-            filter: grayscale(1);
+    background-image: url(../img/icons/insta-square.svg);
     &:hover {
-        -webkit-filter: grayscale(0);
-                filter: grayscale(0);
+        background-image: url(../img/icons/insta-square_h.svg);
     }
 }
 @media only screen and (min-width: 1025px) {
