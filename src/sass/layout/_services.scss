@@ -165,8 +165,11 @@
     }
     .services__title-photo {
         position: relative;
-        img {
-            display: block;
+        .img-wrap{
+            img {
+                max-width: 100%;
+                display: block;
+            }
         }
     }
     &-ics {
@@ -176,7 +179,8 @@
         transform: translate3d(-50%, -50%, 0);
         top: 50%;
         left: 50%;
-        max-width: 80%;
+        width: 100%;
+        padding: 0 13%;
     }
     &-navigation {
         width: 100%;
@@ -204,7 +208,7 @@
     }
     .s__popup-item {
         display: inline-block;
-        margin-right: 65px;
+        margin: 0 32px;
         &:last-of-type {
             margin-right: 0;
         }
@@ -227,16 +231,12 @@
         }
     }
 }
-.services__client,
-.services__todo,
-.services__result {
+.services__block {
     padding:  {
         top: 35px;
         bottom: 45px;
     }
-    color: #fff;
     text-align: center;
-    margin-bottom: 10px;
 }
 .services__client {
     background: #c8c848;
@@ -259,9 +259,9 @@
         text-align: left;
     }
 }
-.services__todo,
-.services__result {
+.bg_grey {
     background: #c1bfbc;
+    color: #fff;
 }
 .services__info {
     text-align: center;
@@ -280,7 +280,7 @@
     }
     .img-item {
         width: 33.333333%;
-        max-height: 155px;
+        max-height: 232px;
         overflow: hidden;
         float: left;
         .video-container {
@@ -401,7 +401,7 @@
     }
     .services__popup {
         .s__popup-item {
-            margin-right: 15px;
+            margin: 0 7px;
         }
     }
     .services__client {
@@ -427,6 +427,11 @@
     .services__client .ttll,
     .services__client .ttur {
         font-size: em(15px);
+    }
+    .services__title-photo {
+        .img-wrap {
+            width: 150%;
+        }
     }
 }
 @include breakpoint(400) {

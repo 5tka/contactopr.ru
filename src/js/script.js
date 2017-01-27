@@ -29,15 +29,17 @@ $(document).ready(function(){
     });
 
     $(".arrow-up").css('display', 'none');
-
-    $(".arrow-up").click(function(){
+    function scrollPageBeginning(){
         if (isMobile) {
             $("html, body").animate({ scrollTop: 0 }, 600);
         } else {
             $("#site_body").mCustomScrollbar("scrollTo", 0, {scrollInertia:1000});
         }
         return false;
-    });
+    }
+    $(".arrow-up").click(scrollPageBeginning);
+    $('#header .logo').click(scrollPageBeginning);
+
      $(window).on('scroll', checkParalaxScroll);
 
 
@@ -77,7 +79,7 @@ $(document).ready(function(){
         // auto: true,
         autoHover: true,
 		adaptiveHeight: true,
-        onSlideAfter: AboutBlockPalaralHeightFix
+        onSlideAfter: AboutBlockPalaraxHeightFix
 	});
 	faces = $('.faces-slider' ).bxSlider({
 		pager: false,
@@ -89,9 +91,9 @@ $(document).ready(function(){
     $('.bxslider-about').bxSlider({
         pager: false,
         adaptiveHeight: true,
-        onSlideAfter: AboutBlockPalaralHeightFix
+        onSlideAfter: AboutBlockPalaraxHeightFix
     });
-function AboutBlockPalaralHeightFix() {
+function AboutBlockPalaraxHeightFix() {
     if (!isMobile) {
         set_slide_start_position();
         scroll_body(thismCustomScrollbar);
@@ -143,9 +145,10 @@ function AboutBlockPalaralHeightFix() {
         $('.brands-wrapper').slick({
             infinite: false,
             autoplay: true,
+            swipe: false,
             autoplaySpeed: 2500
         });
-        $('.brands-wrapper').on('afterChange', AboutBlockPalaralHeightFix);
+        $('.brands-wrapper').on('afterChange', AboutBlockPalaraxHeightFix);
         $('.gallery__list').slick({
             infinite: false,
             speed: 300,
@@ -198,7 +201,7 @@ function AboutBlockPalaralHeightFix() {
                     $('.gallery__wrapper-item div[data-category='+data_cat+']').removeAttr("style");
                 }
                 $('.gallery__list').slick('slickGoTo',0);
-                AboutBlockPalaralHeightFix();
+                AboutBlockPalaraxHeightFix();
             });
             brands.click(function(){
                 data_cl = $(this).data("clients");

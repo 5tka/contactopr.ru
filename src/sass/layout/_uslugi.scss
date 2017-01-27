@@ -134,14 +134,12 @@
 		max-width: 92%;
 	    margin: 0 auto;
 		vertical-align: top;
-		text-align: justify;
-		text-align-last: justify;
-		margin-bottom: 	30px;
+		margin-bottom: 	10px;
 	}
-	.popup-uslugi__navigation {
-		margin-bottom: 15px;
-		@include clearfix;
-	}
+	// .popup-uslugi__navigation {
+	// 	margin-bottom: 15px;
+	// 	@include clearfix;
+	// }
 	.popup_uslugi-prev,
 	.popup_uslugi-next {
 		width: 39px;
@@ -149,38 +147,41 @@
 	    cursor: pointer;
 	    text-indent: -9999px;
 	    overflow: hidden;
+	    margin-top: 10px;
 	}
 	.popup_uslugi-next {
 		float: right;
+		margin-left: 5px;
 	    background: url(../img/bxslider/right_arrow.png) center center no-repeat;
 	}
 	.popup_uslugi-prev {
 		float: left;
+		margin-right: 5px;
 	    background: url(../img/bxslider/left_arrow.png) center center no-repeat;
 	}
-	.popup-header{
-		&__logo{
-			margin-top: 10px;
-			// width: 30%;
-			vertical-align: top;
-			display: inline-block;
-		    margin-left: 0px;
-			.logo{
-				float:none;
-				margin-top: 0;
-			}
+	.popup__header{
+		@include clearfix;
+		text-align: center;
+		// &__logo{
+		// 	margin-top: 10px;
+		// 	// width: 30%;
+		// 	vertical-align: top;
+		// 	display: inline-block;
+		//     margin-left: 0px;
+		// 	.logo{
+		// 		float:none;
+		// 		margin-top: 0;
+		// 	}
+		// }
+		.vacancy__header {
+			text-align: center;
 		}
-		&__image{
-			// width: 30%;
-			vertical-align: top;
+		.uslugi__item{
 			display: inline-block;
-			.uslugi__item{
-				display: block;
-				width: auto;
-				margin-bottom: 	0;
-				height: auto;
-				line-height: 40px;
-			}
+			width: auto;
+			margin-bottom: 	0;
+			height: auto;
+			line-height: 40px;
 			.uslugi__icon{
 				float:none;
 				margin: 0;
@@ -210,15 +211,13 @@
 		padding: 65px 60px;
 		background: #c1bfbc;
 		text-align: right;
-		margin-bottom: 	50px;
 		.quote {
 			font-style: italic;
 			text-transform: uppercase;
 		}
 	}
 	.popup__content{
-		padding: 0 15px;
-		margin-bottom: 70px;
+		padding: 50px 15px 70px;
 		p {
 			margin-bottom: 10px;
 			text-align: justify;
@@ -271,11 +270,10 @@
 		text-align-last: center;
 		@include clearfix();
 		.gallery-item{
-			width:49%;
+			width:50%;
 			vertical-align: top;
-			margin-bottom: 3px;
-			display: inline-block;
-			// margin:0;
+			display: block;
+			float: left;
 			padding:0;
 			font-size: 0;
 			a{
@@ -286,6 +284,7 @@
 				padding:0;
 				font-size:0;
 				img{
+					max-width: 100%;
 					width: 100%;
 					height: auto;
 				}
@@ -310,6 +309,9 @@
 	transition: .25s;
 	z-index: 9999;
 	}
+.uslugi-popup__wrap .popup__content {
+	color: #776f6d;
+}
 .close__popup:hover {
     border-color: #61a327;
 }
@@ -351,7 +353,7 @@
 		left: 0!important;
 	}
 	.popup__wrap .popup__content {
-		margin-bottom: 40px;
+		padding-bottom: 40px;
 	}
 }
 @include breakpoint(624){
