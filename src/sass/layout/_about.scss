@@ -265,8 +265,32 @@ body, html{
 .about_geography ,
 .about_principles ,
 .about_partnership {
+	position: relative;
 	.container {
-		display: none;
+		position: absolute;
+		// display: none;
+	}
+}
+
+.about_history {
+	.container {
+	    top: 20%;
+	    right: 8%;
+	    width: auto;
+	    color: #fff;
+	    text-align: right;
+	}
+}
+.about__slide-title {
+	margin-bottom: 50px;
+	@include font-size(44px);
+	text-transform: uppercase;
+}
+.about__slide-details {
+	margin-bottom: 25px;
+	@include font-size(20px);
+	&:last-of-type {
+		margin-bottom: 0;
 	}
 }
 // ------------------------------------MEDIA---------------------------------

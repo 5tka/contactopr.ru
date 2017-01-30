@@ -208,12 +208,18 @@
 		}
 	}
 	.popup__quote-wrap{
-		padding: 65px 60px;
-		background: #c1bfbc;
-		text-align: right;
+		padding: 45px 60px;
+		background: #ebebeb;
+		text-align: center;
 		.quote {
 			font-style: italic;
-			text-transform: uppercase;
+			font-weight: 300;
+			font-size: 18px;
+		}
+		.author {
+			font-size: 14px;
+			font-weight: 700;
+			margin-top: 25px;
 		}
 	}
 	.popup__content{

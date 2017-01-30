@@ -47,8 +47,8 @@
 				|PR
 		a.popup_uslugi-next(href='#') Следующая услуга
 	.popup__quote-wrap
-		p.quote "Пусть хвалит тебя другой, <br> а не уста твои, — чужой, <br> я не язык твой."
-		p Притчи Соломоновы, 27:2
+		p.quote "Пусть хвалит тебя другой, а не уста твои, — чужой, <br> я не язык твой."
+		p.author Притчи Соломоновы, 27:2
 
 	.popup__content
 		p
@@ -93,9 +93,7 @@
 .services__popup
 	.services__popup-wrap
 		.close__popup-block.b-close
-		.services__title-photo
-			.img-wrap
-				img(src="img/birds_bg.jpg", alt="")
+		.services__title-photo(style='background-image: url("../img/birds_bg.jpg")')
 			//- img(src="img/events/birds/bg.jpg", alt="")
 			.services__popup-ics
 				.s__popup-item
@@ -110,17 +108,24 @@
 			.services__popup-navigation
 				a.services__popup-prev(href='#') Предыдущее событие
 				a.services__popup-next(href='#') Следующее событие
-		.services__block
+		.services__block.project-details
 			span.dscr-title
 				| День рождения Angry Birds Activity Park
-			p.ttur
-				| клиент: <br>
-				| дата:  <br>
-				| место проведения: <br>
-			p.ttll
-				| Angry Birds Activity Park <br>
-				| 23 – 24 апреля 2016 г. <br>
-				| Angry Birds Activity Park <br>
+			div.clearfix
+				p.ttur
+					| клиент:
+				p.ttll
+					| Angry Birds Activity Park
+			div.clearfix
+				p.ttur
+					| дата:
+				p.ttll
+					| 23 – 24 апреля 2016 г.
+			div.clearfix
+				p.ttur
+					| место проведения:
+				p.ttll
+					| Angry Birds Activity Park
 		.services__block.bg_grey
 			span.dscr-title
 				|ЗАДАЧИ
@@ -147,13 +152,13 @@
 		//- 		|Приглашение прессы <br>
 		//- 		|Реализация партнерской программы <br>
 		//- 		|Разработка и реализация креативной концепции <br>
-		//- .services__info
-		//- 	p
-		//- 		|19 декабря 2013 года коммуникационное агентство CONTACTO, <br>
-		//- 		|вдохновленное популярным шоу Ивана Урганта, организовало новогоднее <br>
-		//- 		|мероприятие для группы компаний «Автопродикс». Гости на один вечер <br>
-		//- 		|«перенеслись» в одну из студий  «Останкино» и почувствовали себя <br>
-		//- 		|настоящими звездами телеэфира. <br>
+		.services__info
+			p
+				|19 декабря 2013 года коммуникационное агентство CONTACTO, <br>
+				|вдохновленное популярным шоу Ивана Урганта, организовало новогоднее <br>
+				|мероприятие для группы компаний «Автопродикс». Гости на один вечер <br>
+				|«перенеслись» в одну из студий  «Останкино» и почувствовали себя <br>
+				|настоящими звездами телеэфира. <br>
 		.services__footer
 			.services__img-wrap
 				.img-item

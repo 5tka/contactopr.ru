@@ -447,6 +447,7 @@ function set_slide_start_position() {
     sliders_top=[];
     full_screen_height=$('#site_body').height()-$('#header').height();
     $('.sliders.fullscreen').height(full_screen_height);
+
     $('.sliders').css('top', $('#site_body').height());  /// баг з відступом 2 блоку
     $('.sliders:first').css('top',$('#header').height());
     $('.sliders#paralax_2').css('height', ($('#site_body').height()-$('.sliders#paralax_2').prev('.sliders').outerHeight()) );

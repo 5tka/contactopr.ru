@@ -164,21 +164,25 @@
         z-index: 11;
     }
     .services__title-photo {
-        position: relative;
-        .img-wrap{
-            img {
-                max-width: 100%;
-                display: block;
-            }
+        min-height: 200px;
+        display: table;
+        width: 100%;
+        background: {
+            repeat: no-repeat;
+            position: top center;
+            size: cover;
         }
+        position: relative;
     }
     &-ics {
+        display: table-cell;
+        vertical-align: middle;
         text-align: center;
         @include clearfix;
-        position: absolute;
-        transform: translate3d(-50%, -50%, 0);
-        top: 50%;
-        left: 50%;
+        // position: absolute;
+        // transform: translate3d(-50%, -50%, 0);
+        // top: 50%;
+        // left: 50%;
         width: 100%;
         padding: 0 13%;
     }
@@ -187,6 +191,7 @@
         @include clearfix;
         position: absolute;
         bottom: 10px;
+        left: 0;
         margin-top: -19px;
         padding: 0 15px;
     }
@@ -235,10 +240,18 @@
     padding:  {
         top: 35px;
         bottom: 45px;
+        left: 20px;
+        right: 20px;
     }
     text-align: center;
 }
-.services__client {
+.project-details {
+    color: #fff;
+}
+.clearfix {
+    @include clearfix;
+}
+.services__block {
     background: #c8c848;
     text-align: center;
     .dscr-title {
@@ -249,13 +262,17 @@
     }
     .ttur,
     .ttll {
-        display: inline-block;
+        display: block;
+        float: left;
     }
     .ttur {
+        width: 50%;
         text-transform: uppercase;
         text-align: right;
     }
     .ttll {
+        padding-left: 5px;
+        width: 50%;
         text-align: left;
     }
 }
@@ -312,15 +329,26 @@
     }
 }
 @include breakpoint(800) {
+.services__block {
+    padding:  {
+        top: 35px;
+        bottom: 35px;
+        left: 20px;
+        right: 20px;
+    }
+}
+.services__info {
+    padding:  {
+        top: 50px;
+        bottom: 50px;
+        right: 10px;
+        left: 10px;
+    }
+}
     .services__popup {
         left: 0 !important;
         margin-left: 0 !important;
         width: 100% !important;
-    }
-    .services__title-photo {
-        img {
-            width: 100%;
-        }
     }
     .services {
         padding-bottom: 95px;
@@ -404,7 +432,7 @@
             margin: 0 7px;
         }
     }
-    .services__client {
+    .services__block {
         .dscr-title {
             font-size: em(22px);
             padding:  {
@@ -415,6 +443,22 @@
     }
 }
 @include breakpoint(500) {
+.services__block {
+    padding:  {
+        top: 25px;
+        bottom: 25px;
+        left: 10px;
+        right: 10px;
+    }
+}
+.services__info {
+    padding:  {
+        top: 40px;
+        bottom: 40px;
+        right: 10px;
+        left: 10px;
+    }
+}
     .gallery__wrapper {
         .slick-next:before,
         .slick-prev:before {
@@ -424,8 +468,8 @@
     .services {
         padding-bottom: 70px;
     }
-    .services__client .ttll,
-    .services__client .ttur {
+    .services__block .ttll,
+    .services__block .ttur {
         font-size: em(15px);
     }
     .services__title-photo {
@@ -435,6 +479,14 @@
     }
 }
 @include breakpoint(400) {
+.services__block {
+    .ttll {
+        width: 70%;
+    }
+    .ttur {
+        width: 30%;
+    }
+}
     .gallery__wrapper-item {
         max-width: 330px;
     }
