@@ -121,15 +121,19 @@ body, html{
 			&:hover:after{
 				display: none;
 			}
-			& img{
-				border-radius:50%;
-				-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-				filter: grayscale(100%);
-				&:hover{
-					-webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
-					filter: grayscale(0);
-				}
-			}
+		& img{
+		    border-radius:50%;
+		    filter: grayscale(100%);
+		    -webkit-filter: grayscale(100%);
+		    filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale");
+		    filter: gray;
+		    &:hover{
+		     -webkit-filter: grayscale(0);
+		     filter: grayscale(0);
+		     filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale");
+		     filter: none;
+		    }
+		}
 		&_c{
 			left:8%;
 			z-index:10;
@@ -265,24 +269,58 @@ body, html{
 .about_geography ,
 .about_principles ,
 .about_partnership {
-	position: relative;
+	min-height: 100vh;
+	background: {
+		size: cover;
+		repeat: no-repeat;
+	}
 	.container {
 		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
 		// display: none;
 	}
-}
+	.content-inner {
+		position: absolute;
+	}
 
-.about_history {
-	.container {
-	    top: 20%;
+}
+.about_partnership {
+	.content-inner {
+	    top: 10%;
 	    right: 8%;
-	    width: auto;
 	    color: #fff;
 	    text-align: right;
 	}
 }
+.about_principles {
+	.content-inner {
+	    top: 40%;
+	    left: 8%;
+	    color: #fff;
+	    text-align: left;
+	}
+}
+.about_history {
+	.content-inner {
+	    top: 20%;
+	    right: 8%;
+	    color: #fff;
+	    text-align: right;
+	}
+}
+.about_geography {
+	.content-inner {
+		top: 30%;
+		right: 8%;
+		color: #000;
+		text-align: right;
+	}
+}
 .about__slide-title {
-	margin-bottom: 50px;
+	margin-bottom: 40px;
 	@include font-size(44px);
 	text-transform: uppercase;
 }
@@ -314,9 +352,7 @@ body, html{
 	.bx-wrapper{
 		margin-bottom: 0;
 	}
-	.about{
-		padding:30px 0 40px;
-	}
+
 	.about__title{
 			@include font-size(45px);
 			margin-bottom: 40px;
@@ -328,6 +364,7 @@ body, html{
 	}
 	.about-faces{
 			&__list{
+				overflow: hidden;
 				height: auto;
 				vertical-align: top	;
 			    text-align: justify;
@@ -368,6 +405,16 @@ body, html{
 		width: 12%;
 	}
 }
+@include breakpoint(1024){
+	.about__slide-title {
+		margin-bottom: 30px;
+		@include font-size(40px);
+	}
+	.about__slide-details {
+		margin-bottom: 25px;
+		@include font-size(18px);
+	}
+}
 @include breakpoint(940){
 	.about{
 		min-height:auto;
@@ -377,6 +424,9 @@ body, html{
 	}
 	.about-faces__item{
 		width: 10%;
+	}
+	.about{
+		padding:50px 0 120px;
 	}
 }
 @include breakpoint(854){
@@ -396,6 +446,17 @@ body, html{
 	}
 }
 @include breakpoint(705){
+	.about__slide-title {
+		margin-bottom: 25px;
+		@include font-size(35px);
+	}
+	.about__slide-details {
+		margin-bottom: 25px;
+		@include font-size(18px);
+	}
+	.about{
+		padding:40px 0 80px;
+	}
 	.about{
 		min-height:auto;
 	}
@@ -412,9 +473,6 @@ body, html{
 }
 // Media для слайдера в слайдере (только лица)
 @include breakpoint(705){
-	.about{
-		min-height:auto;
-	}
 	.about-faces__wrap .bx-prev{
 		display: block;
 		width: 30px !important;
@@ -442,14 +500,38 @@ body, html{
 		}
 	}
 }
-
+@include breakpoint(600){
+	.about{
+		padding:30px 0 40px;
+	}
+	.about__slide-title {
+		margin-bottom: 20px;
+		@include font-size(30px);
+	}
+	.about__slide-details {
+		margin-bottom: 25px;
+		@include font-size(16px);
+	}
+}
+@media only screen and (max-width: 450px) and (max-height: 750px){
+    .about_geography,
+    .about_history,
+    .about_partnership,
+    .about_principles {
+        min-height: 60vh ;
+    }
+}
 @include breakpoint(480){
+
 	.about_history ,
 	.about_geography ,
 	.about_principles ,
 	.about_partnership {
-		.container {
-			display: block;
+		.content-inner {
+			top: 5%;
+			left: 0;
+			right: 0;
+			padding: 0 40px;
 		}
 	}
 }

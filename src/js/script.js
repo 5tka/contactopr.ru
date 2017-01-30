@@ -91,6 +91,7 @@ $(document).ready(function(){
     $('.bxslider-about').bxSlider({
         pager: false,
         adaptiveHeight: true,
+        auto: true,
         onSlideAfter: AboutBlockPalaraxHeightFix
     });
 function AboutBlockPalaraxHeightFix() {
