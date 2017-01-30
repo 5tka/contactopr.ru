@@ -208,7 +208,7 @@
 		}
 	}
 	.popup__quote-wrap{
-		padding: 45px 60px;
+		padding: 45px 50px;
 		background: #ebebeb;
 		text-align: center;
 		.quote {
@@ -232,7 +232,6 @@
 	.popup-content{
 		&__title{
 			text-align: center;
-			color: black;
 			font-weight: bold;
 			padding-bottom:	32px;
 			position: relative;
@@ -363,6 +362,9 @@
 	}
 }
 @include breakpoint(624){
+	.popup__wrap .popup__quote-wrap {
+		padding: 35px 40px;
+	}
 	.uslugi__wrap{
 		text-align-last: center;
 	}

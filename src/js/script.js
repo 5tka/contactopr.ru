@@ -19,6 +19,70 @@ function checkParalaxScroll(){
 
 }
 $(document).ready(function(){
+    // $('.video-container').click(function(){
+    //     event.preventDefault();
+    //     youTubeVideo($(this))
+    //     return false;
+    // })
+    function youTubeVideo(link) {
+        console.log(link);
+        if (link.data('video').match(/youtube/g)) {
+            youTubeIframe = $('#video_popup #video_iframe');
+            var iframeSrc = idIMG = link.data('video');
+            idIMG = idIMG
+                .replace(/(?:youtube\.com\/\S*(?:(?:\/e(?:mbed))?\/|watch\?(?:\S*?&?v\=))|youtu\.be\/)|enablejsapi=\d/g, '') // очистка первой степени
+                .match(/([\w\d]{11})/g); // очистка второй степени
+            var init = true;  // флаг для отслеживания статуса проведенных работ
+            var parent = link;
+
+            parent.append("<img src='//img.youtube.com/vi/" + idIMG + "/hqdefault.jpg'>"); // добавляем кнопку для старта видео
+
+            // var playButton = document.getElementById("videoImg");
+
+            parent.on('click', function () {
+                event.preventDefault();
+                $('#video_popup').fadeIn();
+                var url = $(this).attr('data-video');
+                console.log(url);
+                if (iframeSrc.search(/\?.+/g) == -1) {
+                    //применяеться если есть параметры к видео
+                    youTubeIframe.attr('src', url + '?autoplay=1');
+                } else {
+                    // в случаи если есть другие параметры
+                    youTubeIframe.attr('src', url +  '&autoplay=1');
+                }
+                console.log(url);
+                //var selectop = $(this).attr('data-package');
+               youTubeIframe.show();
+                return false;
+                // body...
+            });
+            $('.close__video-popup').click(function(){
+                $('#video_popup').fadeOut();
+                youTubeIframe.attr('src','');
+            })
+            // playButton.removeAttribute('style');
+            // function createImg(event) {
+            //     if (event) event.preventDefault();
+            //     document.querySelector('.video-wrapper iframe').setAttribute("id", "video");
+            //     if (init) { // прячем блок видео
+            //         youTubeIframe.style = "display: none";
+            //         // playButton.removeAttribute('style');
+            //         init = false;
+
+            //     } else {    // показываем блок видео при нажатии на картинку
+            //         youTubeIframe.removeAttribute('style');
+            //         // playButton.style = "display: none";
+            //         init = true;
+            //     }
+            // }
+
+            // createImg(); // вызов 1 раз функции при загрузку страницы
+        }
+    }
+    youTubeVideo($('.video-container'));
+
+
     // $('a[href="#"]').click(function(event) {
          // Act on the event
     //     event.preventDefault();
@@ -94,6 +158,17 @@ $(document).ready(function(){
         auto: true,
         onSlideAfter: AboutBlockPalaraxHeightFix
     });
+    // $('.video-container iframe').click(function(event){
+    //     event.preventDefault();
+    //     var iframeLink = $(this).attr('src');
+    //     alert(1);
+    //     $('.video-popup').bPopup({
+    //         content:'iframe', //'ajax', 'iframe' or 'image'
+    //         contentContainer:'.content',
+    //         loadUrl: iframeLink //Uses jQuery.load()
+    //     });
+    //     return false;
+    // })
 function AboutBlockPalaraxHeightFix() {
     if (!isMobile) {
         set_slide_start_position();
@@ -395,11 +470,11 @@ function scroll_body(obj) { // #sitebody
     //  "; Высота экрана: "+$('#site_body').height()
     //  );
 
-    console.log('bs='+body_scroll_top);
+    // console.log('bs='+body_scroll_top);
     $('.sliders').each(function(i, val)
     {
         def=sliders_top[i]-body_scroll_top;
-        console.log(sliders_top[i]+'---'+def);
+        // console.log(sliders_top[i]+'---'+def);
         if (def>40) {$(this).css('top', def);}
 
         // else if ($(this).hasClass('fixed_slide')) {
@@ -452,7 +527,7 @@ function set_slide_start_position() {
     $('.sliders').css('top', $('#site_body').height());  /// баг з відступом 2 блоку
     $('.sliders:first').css('top',$('#header').height());
     $('.sliders#paralax_2').css('height', ($('#site_body').height()-$('.sliders#paralax_2').prev('.sliders').outerHeight()) );
-    console.log('hgjh'+(full_screen_height-$('.sliders#paralax_2').prev('.sliders').outerHeight()));
+    // console.log('hgjh'+(full_screen_height-$('.sliders#paralax_2').prev('.sliders').outerHeight()));
     // $('.sliders').eq(1).css('top',$('.sliders:first').height()+40); // тіпа порішали верхній баг
     //
     // sl_1_w=parseInt($(document).width()/2);
@@ -478,9 +553,9 @@ function set_slide_start_position() {
         sliders_top.push($('#header').height()+center_height);
         center_height+=elemH;
     });
-    console.log(slidersNav);
-    console.log('sliders_top=')
-    console.log(sliders_top);
+    // console.log(slidersNav);
+    // console.log('sliders_top=')
+    // console.log(sliders_top);
     real_height=center_height;
     // center_height+=300;
     $('#center').height(center_height);
